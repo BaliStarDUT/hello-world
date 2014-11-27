@@ -1,7 +1,8 @@
-//use synchronize to control access
+//use a synchronize block to control access to SumArray
 class SumArray{
 	private int sum;
-	synchronized int sumArray(int[] nums){
+	//synchronized 
+	int sumArray(int[] nums){
 		sum=0;
 		for(int i=0;i<nums.length;i++){
 		sum+=nums[i];
@@ -30,9 +31,12 @@ class MyThread implements Runnable{
 		thrd.start();
 	}
 	public void run(){
-		int sum;
+		//int sum;
 		System.out.println(thrd.getName()+" starting.");
-		answer = sa.sumArray(a);
+		synchronized(sa){
+			answer = sa.sumArray(a);
+		}
+		
 		System.out.println("Sum for "+thrd.getName()+" is "+answer);
 		System.out.println(thrd.getName()+" terminating.");
 	}
