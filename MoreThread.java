@@ -27,14 +27,16 @@ class MoreThreads{
 		MyThread mt2=new MyThread("Child #2");
 		MyThread mt3=new MyThread("Child #3");
 		
-		for(int i=0;i<50;i++){
+		//for(int i=0;i<50;i++){
+		
+		do{
 		System.out.print(".");
 		try{
 			Thread.sleep(100);
 		}catch(InterruptedException exc){
 			System.out.println("Main thread Interrupted.");
 		}
-	}
+	}while(mt1.thrd.isAlive()||mt2.thrd.isAlive()||mt3.thrd.isAlive());//这会让主线程一直等待,直到所有线程都终止
 	System.out.println("Main thread ending.");
 	}
 }
