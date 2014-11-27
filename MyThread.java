@@ -1,22 +1,23 @@
+//Improved thread
 //create a thread by implementing Runnable.
 class MyThread implements Runnable{
-	String thrdName;
-	MyThread(String name)
-	{
-		thrdName=name;
+	Thread thrd;
+	MyThread(String name){
+		thrd=new Thread(this,name);
+		thrd.start();
 	}	
 	//Entry point of thread 
 	public void run(){
-		System.out.println(thrdName+" starting.");
+		System.out.println(thrd.getName()+" starting.");
 		try{
 			for(int count=0;count<10;count++){
 			Thread.sleep(400);
-			System.out.println("In "+thrdName+", count is "+count );
+			System.out.println("In "+thrd.getName()+", count is "+count );
 			}
 		}catch(InterruptedException exc){
-		System.out.println(thrdName+" INTERRUPTED.");
+		System.out.println(thrd.getName()+" INTERRUPTED.");
 		}
-		System.out.println(thrdName+" terminating.");
+		System.out.println(thrd.getName()+" terminating.");
 	}
 }
 class UseThreads{
