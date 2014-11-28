@@ -8,6 +8,13 @@ class TickTock{
 			return;
 		}
 		System.out.print("Tick ");
+		//wait 1/2 second
+		try{
+			Thread.sleep(500);
+			
+		}catch(InterruptedException exc){
+			System.out.println("Thread interrupted.");
+		}
 		state="ticked";//set the current state to ticked
 		notify();//let tock() run
 		try{
@@ -25,8 +32,16 @@ class TickTock{
 			return;
 		}
 		System.out.println("Tock ");
+		//wait 1/2 second
+		try{
+			Thread.sleep(500);
+			
+		}catch(InterruptedException exc){
+			System.out.println("Thread interrupted.");
+		}
+		
 		state="tocked";//set the current state to ticked
-		notify();//let tick() run
+		//notify();//let tick() run
 		try{
 			while(!state.equals("ticked"))
 			wait(1000);//wait for tick() to complete
