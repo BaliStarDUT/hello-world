@@ -21,5 +21,12 @@ class DemoPower{
 		System.out.println(x.b+" raised to the "+x.e+" power is "+x.getPwr());
 		System.out.println(y.b+" raised to the "+y.e+" power is "+y.getPwr());
 		System.out.println(z.b+" raised to the "+z.e+" power is "+z.getPwr());
+		if(args.length!=2){
+		System.out.println("Usage: java DemoPower number power");
+		return;
+	}
+		
+	Power a=new Power(Integer.parseInt(args[0]),Integer.parseInt(args[1]));
+	System.out.println(a.b+" raised to the "+a.e+" power is "+a.getPwr());
 	}
 }
