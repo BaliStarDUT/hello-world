@@ -16,5 +16,12 @@ class MemoryDemo{
 		mem2=r.freeMemory();
 		System.out.println("Free memory after allocation:"+mem2);
 		System.out.println("Memory used by allocation is:"+(mem1-mem2));
+		//discard Integer
+		for(int i=0;i<1000;i++){
+			someints[i]=null;
+		}
+r.gc();
+mem2=r.freeMemory();
+System.out.println("Free memory after collecting "+" discarded Integers: "+mem2);
 	}
 }
