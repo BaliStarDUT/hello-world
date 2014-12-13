@@ -1,7 +1,7 @@
 //try this 4_2
 //Demonstrate garbage collection and the finalize() method
 class MyClass{
-	int x;
+	int x;/
 	MyClass(int i){
 		x=i;
 		//System.out.println("Generate: "+x);
