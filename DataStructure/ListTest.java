@@ -72,13 +72,37 @@ public class ListTest{
 	}
 	//修改List中的元素
 	public void testModify(){
+		coursesToSelect.set(4,new CourseCellection("7","毛概"));
+	}
+	//删除LIst中的元素
+	public void testRemove(){
+		//CourseCellection cr = (CourseCellection)coursesToSelect.get(4);
+		//System.out.println("我是课程："+cr.id+":"+cr.name+",我即将被删除");
+		System.out.println("即将删除4和5位置上的课程！");
+		CourseCellection[] courses = {(CourseCellection)coursesToSelect.get(4),(CourseCellection)coursesToSelect.get(5)};
+		coursesToSelect.removeAll(Arrays.asList(courses));
+		/*coursesToSelect.remove(4);*/
+		System.out.println("成功删除课程！");
+		testForEach();
 		
 	}
+	//测试往list中添加其他类型的数据
+	public void testType(){
+		System.out.println("测试能否往List中添加一些奇怪的东西呢？");
+		coursesToSelect.add("我不是课程，我是一个字符串！");
+	}
+	
 	public static void main(String[] args){
 		ListTest lt = new ListTest();
 		lt.testAdd();
-		lt.testGet();
+		lt.testType();
+		lt.testForEach();
+		/*lt.testGet();
 		lt.testIterator();
 		lt.testForEach();
+		lt.testModify();
+		lt.testForEach();
+		lt.testRemove();*/
+		
 	}
 }
