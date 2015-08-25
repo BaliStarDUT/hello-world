@@ -82,11 +82,40 @@ public class MapTest{
 		}
 		}
 	}
+	//利用put方法修改map中的已有映射
+	public void testModify(){
+		//提示输入要修改的学生ID
+		System.out.println("Please input the ID to update:");
+		//
+		Scanner sc = new Scanner(System.in);
+		while(true){
+			//取得ID
+			String stuID = sc.next();
+			//从students中查找该ID对应的student对象
+			Student student = students.get(stuID);
+			if(student == null){
+				System.out.println("This ID does't exist! Input again:");
+				continue;
+			}else{
+				//提示当前对应的学生对象的姓名
+				System.out.println("The ID belongs to the student:"+student.name);
+				//提示输入新的学生姓名，来修改已有值
+				System.out.println("Please input new name for this student:");
+				String name = sc.next();
+				Student newStudent = new Student(stuID,name);
+				students.put(stuID,newStudent);
+				System.out.println("Update success!!");
+				break;
+			}
+		}
+	}
 	public static void main(String[] args){
 		MapTest mt = new MapTest();
 		mt.testPut();
 		mt.testKeySet();
 		mt.testRemove();
+		mt.testEntrySet();
+		mt.testModify();
 		mt.testEntrySet();		
 	}
 }
