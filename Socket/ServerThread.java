@@ -1,4 +1,5 @@
 //package com.yang.test;
+import java.util.TimerTask;
 import java.net.ServerSocket; 
 import java.net.Socket;
 import java.io.InputStream;
@@ -9,7 +10,7 @@ import java.io.BufferedReader;
 /*
 基于TCP协议的Socket通信，服务器端线程处理
 */
-public class ServerThread extends Thread {
+public class ServerThread extends Thread{
 	//和本线程相关的socket
 	Socket socket = null;	
 	PrintWriter pw = null;
@@ -40,12 +41,18 @@ public class ServerThread extends Thread {
 		}finally{
 			try{
 			//关闭资源
-			pw.close();
-			os.close();
-			br.close();
-			isr.close();
-			is.close();
-			socket.close();
+			if(pw!=null)//不判断的话会出错
+					pw.close();
+				if(os!=null)
+					os.close();
+				if(br!=null)
+					br.close();
+				if(isr!=null)
+					isr.close();
+				if(is!=null)
+					is.close();
+				if(socket!=null)
+					socket.close();
 			}catch(Exception e){
 				e.printStackTrace();
 			}
