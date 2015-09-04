@@ -3,7 +3,8 @@
 */
 import java.util.Set;
 import java.util.HashSet;
-public class Student{
+import java.lang.Comparable;
+public class Student implements Comparable<Student>{
 	public String id;
 	public String name;
 	public Set<CourseCellection> courses;
@@ -42,6 +43,10 @@ public class Student{
 				return false;
 			}
 		}
+	}
+	@Override
+	public int compareTo(Student o){
+		return this.id.compareTo(o.id);
 	}
 	
 }
