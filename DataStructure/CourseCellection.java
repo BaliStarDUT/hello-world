@@ -11,6 +11,14 @@ public class CourseCellection{
 		this.id=id;
 		this.name=name;
 	}
+	@Override
+	public int hashCode(){
+		final int prime =31;
+		int result = 1;
+		result = prime * result +((name == null)?0:name.hashCode());
+		return result;
+	}
+	
 	@Override //equals()重写模板
 	public boolean equals(Object obj){
 		if(this == obj){
