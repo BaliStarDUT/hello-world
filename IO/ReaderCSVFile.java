@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 /**
+ * 利用递归方法，查找标志位位置一段一段输出
  * 解析简单CSV文件，可以识别逗号',',引号'"'，并在命令行输出解析结果
  * @author yangzhene
  *
