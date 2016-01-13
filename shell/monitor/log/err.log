@@ -1,0 +1,13 @@
+/bin/bash: ../shares/load.sh: No such file or directory
+grep: ../conf/mon.conf: No such file or directory
+/bin/bash: ../shares/load.sh: No such file or directory
+grep: ../conf/mon.conf: No such file or directory
+/bin/bash: ../shares/load.sh: No such file or directory
+/bin/bash: ../shares/502.sh: No such file or directory
+/bin/bash: ../shares/load.sh: No such file or directory
+/bin/bash: ../shares/502.sh: No such file or directory
+]0;root@yangz-CW65: /usr/local/sbin/mon/binroot@yangz-CW65:/usr/local/sbin/mon/bin# ls
+]0;root@yangz-CW65: /usr/local/sbin/mon/binroot@yangz-CW65:/usr/local/sbin/mon/bin# ^C
+]0;root@yangz-CW65: /usr/local/sbin/mon/binroot@yangz-CW65:/usr/local/sbin/mon/bin# ^C
+]0;root@yangz-CW65: /usr/local/sbin/mon/binroot@yangz-CW65:/usr/local/sbin/mon/bin# ^C
+]0;root@yangz-CW65: /usr/local/sbin/mon/binroot@yangz-CW65:/usr/local/sbin/mon/bin# exit
