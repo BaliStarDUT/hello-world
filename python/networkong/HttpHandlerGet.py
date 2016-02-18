@@ -4,8 +4,6 @@ __author__='drawnkid@gmail.com'
 from http.server import HTTPServer,BaseHTTPRequestHandler
 import io,shutil,urllib
 
-token='yang'
-print("开始校验签名")
 class HttpHandlerGet(BaseHTTPRequestHandler):
     def do_GET(self):
         name="World"
@@ -22,7 +20,7 @@ class HttpHandlerGet(BaseHTTPRequestHandler):
             print("nonce:"+nonce)
             echostr=params["echostr"][0] if "echostr" in params else None
             print("echostr:"+echostr)			
-        r_str=echostr	#"signature:"+signature+"timestamp:"+timestamp+"nonce:"+nonce+"echostr:"+echostr+name+"<form action='' method='POST'>Name:<input name='name' /> <br /> <input type='submit' value='submit' /></ form>"
+        r_str="signature:"+signature+"timestamp:"+timestamp+"nonce:"+nonce+"echostr:"+echostr+name+"<form action='' method='POST'>Name:<input name='name' /> <br /> <input type='submit' value='submit' /></ form>"
         enc="UTF-8"
         encoded = ''.join(r_str).encode(enc)
         f = io.BytesIO()

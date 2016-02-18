@@ -9,7 +9,7 @@ class MyHttpHandler(BaseHTTPRequestHandler):
         r_str="Hello World!"
         enc="UTF-8"
         encoded = ''.join(r_str).encode(enc)
-        f = io.BytesID()
+        f = io.BytesIO()
         f.write(encoded)
         f.seek(0)
         self.send_response(200)
