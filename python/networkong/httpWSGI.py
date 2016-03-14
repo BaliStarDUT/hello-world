@@ -1,0 +1,9 @@
+#!/usr/bin/env/python3
+# -*- coding: utf-8 -*-
+__author__='drawnkid@gmail.com'
+def application(environ, start_response):
+    start_response('200 OK',[('Content-Type','text/html')])
+    print(environ['PATH_INFO'])
+    body = '<h1>Hello, %s!</h1>' % (environ['PATH_INFO'][1:] or 'web')
+    return [body.encode('utf-8')]
+
