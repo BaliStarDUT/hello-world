@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+<p>Clike the Button to show your position</p>
+<p id="demo">Your place:</p>
+<button onclick="getLocation()">try</button>
+<button onclick="postPosition()">postPositon</button>
+
+<div id="mapholder"></div>
+<div id="floatmap"></div>
+<div id="myDiv"></div>
+<script>
+var x=document.getElementById("demo");
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition,showError);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+
+function showPosition(position)
+  {
+  var latlon1=position.coords.latitude+","+position.coords.longitude;
+
+  var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
+  +latlon1+"&zoom=14&size=400x300&sensor=false";
+  document.getElementById("mapholder").innerHTML="<img src='"+img_url+"' />";
+  x.innerHTML="Latitude: " + position.coords.latitude + 
+  "<br />Longitude: " + position.coords.longitude +
+  "<br />Accuracy: " + position.coords.accuracy +
+  "<br />Altitude: " + position.coords.altitude +
+  "<br />AltitudeAccuracy: "+ position.coords.altitudeAccuracy +
+  "<br />Heading:"+position.coords.heading +
+  "<br />Speed:"+position.coords.speed +
+  "<br />Timestamp: "+position.timestamp;
+
+  lat=position.coords.latitude;
+  lon=position.coords.longitude;
+  latlon=new google.maps.LatLng(lat, lon)
+  mapholder=document.getElementById('floatmap')
+  mapholder.style.height='250px';
+  mapholder.style.width='500px';
+
+  var myOptions={
+  center:latlon,zoom:14,
+  mapTypeId:google.maps.MapTypeId.ROADMAP,
+  mapTypeControl:false,
+  navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+  };
+  var map=new google.maps.Map(document.getElementById("floatmap"),myOptions);
+  var marker=new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+  }
+
+function showError(error)
+  {
+  switch(error.code) 
+    {
+    case error.PERMISSION_DENIED:
+      x.innerHTML="User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML="Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML="The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML="An unknown error occurred."
+      break;
+    }
+  }
+  function postPosition(){
+	  var xmlhttp;
+	  if(window.XMLHttpRequest){
+  		xmlhttp=new XMLHttpRequest();
+	  }else{
+	  	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	  xmlhttp.open("GET","https://198.199.111.16:8000/positon",true);
+	  xmlhttp.send();
+	  xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+	    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+	    }
+	  }
+	}
+</script>
+</body>
+</html>
