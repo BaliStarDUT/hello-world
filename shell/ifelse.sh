@@ -9,7 +9,7 @@ LINUX=
 echo 
 echo "Identifying the platform on which this installer is running on.."
 echo "$PLATFORM"
-if [ "$PLATFORM"="Linux" ]
+if [ "$PLATFORM"="FreeBSD" ]
 then 
 	echo "This is FreeBSD system."
 	FREEBSD=1
