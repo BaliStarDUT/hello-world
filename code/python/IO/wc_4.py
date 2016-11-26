@@ -20,4 +20,5 @@ else:
 chars = len(data)
 words = len(data.split())
 lines = data.count('\n')
+
 print(words,lines,chars)
