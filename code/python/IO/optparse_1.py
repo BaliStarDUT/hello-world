@@ -3,7 +3,7 @@
 __author__='drawnkid@gmail.com'
 from optparse import OptionParser
 import sys,os
-def options():
+def opt():
     parser = OptionParser("Usage:%prog [file] [file2] ...")
     parser.add_option("-c","--chars",dest="chars",action="store_true",default=True,help="only count characters",)
     parser.add_option("-l","--lines",dest="lines",action="store_true",default  =True,help="only count lines")
@@ -29,16 +29,15 @@ def print_wc(options,lines,words,chars,fn):
     print(fn)
 
 def main():
-    options,args = options()
+    options,args = opt()
     if args:
-	fn = args[0]
-	with open(args[0]) as fd:
-	    data = fd.read()
+        fn = args[0]
+        with open(args[0]) as fd:
+            data = fd.read()
     else:
-	fn = ""
-	print("Please input what to wc:")
-	data = sys.stdin.read()
-
+        fn = ""
+        print("Please input what to wc:")
+        data = sys.stdin.read()
     lines,words,chars = get_count(data)
     print_wc(options,lines,words,chars,fn)
 
