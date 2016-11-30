@@ -14,5 +14,20 @@ def md5sum(fileName):
             break
     fd.close()
     return md5.hexdigest()
+def md5sum2(fileName):
+    md5 = hashlib.md5()
+    with open(fileName) as fd:
+        while True:
+            data = fd.read(1024*4)
+            if data:
+                md5.update(data)
+            else:
+                break
+    return md5.hexdigest()
+
+
 if __name__=="__main__":
-    print(md5sum(sys.argv[1]))
+    try:
+        print(md5sum2(sys.argv[1]))
+    except IndexError:
+        print("a file is needed.")
