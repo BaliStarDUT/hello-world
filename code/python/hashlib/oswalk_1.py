@@ -3,6 +3,7 @@
 __author__='drawnkid@gmail.com'
 import os 
 import sys
+import operator
 import hashlib_1
 def sortList(fileList):
     size=[]
@@ -23,20 +24,26 @@ def sortList(fileList):
             index+=1
     print(size)
     return size
+def sortList2(fileList):
+    dic={}
+    for fileName in fileList:
+        f_size=os.path.getsize(fileName)
+        dic[fileName] = f_size
+    return dic
 a = os.walk(sys.argv[1])
-print(a)
+#print(a)
 alist=[]
 for p,d,f in a:
     for i in f:
-        print(os.path.join(p,i))
+        #print(os.path.join(p,i))
         #print(hashlib_1.md5sum2(os.path.join(p,i)))
-        print(os.path.getsize(os.path.join(p,i)))
+        #print(os.path.getsize(os.path.join(p,i)))
         alist.append(os.path.join(p,i))
-print('alist=',len(alist))
-fileList=[]
-#print(sorted(alist,key=))
-fileList=sortList(alist)
-print(fileList)
-print(len(fileList))
+#print('alist=',len(alist))
+dic = sortList2(alist)
+sorted_dic = sorted(dic.items(),key=operator.itemgetter(1),reverse=True)
+for k,v in sorted_dic[:10]:
+    print(k,v)
+#print(sorted_dic)
 
 
