@@ -28,7 +28,7 @@ def print_wc(options,lines,words,chars,fn):
     if options.words:
         #print("words=",words,end=' ')
         print(words,end=' ')
-    if options.chars:
+   if options.chars:
         #print("chars=",chars,end=' ')
         print(chars,end=' ')
     print(fn)
