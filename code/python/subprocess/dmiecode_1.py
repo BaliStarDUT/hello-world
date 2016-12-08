@@ -13,8 +13,8 @@ while True:
     #    line = data.readlines(4)
     if line:
         with open(fileName,'a') as fileSave:
-            fileSave.write(line)
-        print(line)
+            fileSave.write(str(line,encoding='utf-8'))
+        print(str(line,encoding='utf-8'))
     else:
         break
 

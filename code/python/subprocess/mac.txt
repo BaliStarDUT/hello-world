@@ -1,0 +1,4 @@
+23:57:23.500068 24:0a:64:2a:99:fa > fc:d7:33:62:c8:2e, ethertype IPv4 (0x0800), length 66: 192.168.0.106.42654 > 121.201.9.155.80: Flags [.], ack 2480562239, win 247, options [nop,nop,TS val 2032744 ecr 1717535703], length 0
+23:57:24.500061 24:0a:64:2a:99:fa > fc:d7:33:62:c8:2e, ethertype IPv4 (0x0800), length 66: 192.168.0.106.42654 > 121.201.9.155.80: Flags [.], ack 1, win 247, options [nop,nop,TS val 2032994 ecr 1717535703], length 0
+23:57:24.593267 fc:d7:33:62:c8:2e > 24:0a:64:2a:99:fa, ethertype IPv4 (0x0800), length 66: 121.201.9.155.80 > 192.168.0.106.42654: Flags [.], ack 1, win 71, options [nop,nop,TS val 1717546807 ecr 2025202], length 0
+
