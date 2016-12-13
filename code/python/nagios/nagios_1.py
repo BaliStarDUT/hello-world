@@ -16,12 +16,15 @@ HOST_TEMP = """ define host{
     address    %(ip)s
     }
 """
-url ='http://192.168.1.106:8000/hostinfo/getjson/'
+url ='http://192.168.0.107:81/hostinfo/getjson/'
 req = urllib.request.urlopen(url)
-data = json.loads(req.read())
+data = json.loads(str(req.read(),encoding='utf-8'))
 conf = ''
-for hg in data:
+print(data)
+for hg in data['data']:
+    print(hg)
     for h in hg['members']:
+        print(h)
         conf+=HOST_TEMP % h
 
 hostconf = os.path.join(CONF_DIR,'hosts.cfg')
