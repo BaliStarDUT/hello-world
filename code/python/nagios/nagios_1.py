@@ -22,10 +22,11 @@ data = json.loads(str(req.read(),encoding='utf-8'))
 conf = ''
 print(data)
 for hg in data['data']:
-    print(hg)
-    for h in hg['members']:
-        print(h)
-        conf+=HOST_TEMP % h
+    #print(hg)
+    print(hg['members'])
+    #for h in hg['members']:
+    #    print(h)
+    conf+=HOST_TEMP % hg['members']
 
 hostconf = os.path.join(CONF_DIR,'hosts.cfg')
 with open(hostconf,'w') as fd:
