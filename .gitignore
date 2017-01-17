@@ -1,6 +1,8 @@
 /build/
+*/target/*
 .settings/
 .classpath
 .project
 *.class
 *.pyc
+*.hprof
