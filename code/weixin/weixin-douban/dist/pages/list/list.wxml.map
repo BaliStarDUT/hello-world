@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["pages/list/list.xml"],"sourcesContent":["<import src=\"../common/movie-list\"/>\n<view class=\"container\">\n  <!-- <view class=\"header\">\n    <text>{{ subtitle }}</text>\n  </view> -->\n  <template is=\"movie-list\" data=\"{{ movies, loading, hasMore }}\"/>\n</view>\n"],"file":"list.wxml"}

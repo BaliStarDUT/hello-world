@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["pages/profile/profile.json"],"sourcesContent":["// Window configuration\n// https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html#window\n{\n  // 类型：String；默认值：无\n  // 导航栏标题文字内容\n  \"navigationBarTitleText\": \"About me\"\n}\n"],"file":"profile.json"}
