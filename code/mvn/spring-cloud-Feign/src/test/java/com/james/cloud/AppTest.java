@@ -1,4 +1,4 @@
-package cloud;
+package com.james.cloud;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
