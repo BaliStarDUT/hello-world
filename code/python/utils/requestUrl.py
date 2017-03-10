@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 __author__='drawnkid@gmail.com'
 from urllib.request import urlopen
-for line in urlopen("http://tycho.usno.navy.mil/cgi-bin/timer.pl"):
+for line in urlopen("https://www.zhihu.com"):
     line = line.decode("utf-8")
-    if 'EST' in line or 'EDT' in line:
+    if '<h1' in line or '<h2' in line:
         print(line)
