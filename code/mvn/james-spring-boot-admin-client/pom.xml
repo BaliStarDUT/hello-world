@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.james</groupId>
-    <artifactId>james-spring-boot-admin</artifactId>
+    <artifactId>james-spring-boot-admin-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <parent>
@@ -28,16 +28,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <!-- Add Spring Boot Admin Server and the UI
-        参考：http://codecentric.github.io/spring-boot-admin/1.4.6/-->
+        <!--Add spring-boot-admin-starter-client-->
         <dependency>
             <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-server</artifactId>
-            <version>1.4.6</version>
-        </dependency>
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-server-ui</artifactId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
             <version>1.4.6</version>
         </dependency>
     </dependencies>
