@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 /**
  * Created by James Yang on 2017/4/7 0007 上午 11:15.
  */
-@SpringApplication
+@SpringBootApplication
 @EnableScheduling
 @EnableAdminServer
 public class SpringBootAdminApplication {
