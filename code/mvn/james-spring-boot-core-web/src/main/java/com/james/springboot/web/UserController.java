@@ -1,4 +1,4 @@
-package com.james.springboot.controller;
+package com.james.springboot.web;
 
 import com.james.springboot.model.User;
 import io.swagger.annotations.ApiImplicitParam;

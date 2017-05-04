@@ -1,23 +1,31 @@
-package com.james.springboot.controller;
+package com.james.springboot.web;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.awt.*;
 import java.net.URI;
 
-@RestController
+@Controller
 public class IndexController {
     private Logger logger = LoggerFactory.getLogger(getClass());
-    @RequestMapping("/")
-    public String home() {
-        return "Hello World!"+"你好世界";
-    }
 
-    @Scheduled(fixedDelay=5000)
+    @ApiOperation(value="根目录", notes="网站根目录")
+    @ApiImplicitParam(name = "map", value = "传递到响应的模型", required = true, dataType = "ModelMap")
+    @RequestMapping(value = "/",method= RequestMethod.GET)
+    public String index(ModelMap map) {
+        map.addAttribute("title","Legue Of Legends");
+        return "index";
+    }
+    @Scheduled(fixedDelay=50000)
     public void  scheduledTask() {
         logger.debug("Logger Level ：DEBUG "+"Hello World!");
         logger.info("Logger Level ：INFO "+"163");
