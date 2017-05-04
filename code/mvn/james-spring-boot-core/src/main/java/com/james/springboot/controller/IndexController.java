@@ -17,7 +17,12 @@ public class IndexController {
         return "Hello World!"+"你好世界";
     }
 
-    @Scheduled(fixedDelay=5000)
+    @RequestMapping("/hello")
+    String hello() {
+        return "Hello World";
+    }
+
+    @Scheduled(fixedDelay=50000)
     public void  scheduledTask() {
         logger.debug("Logger Level ：DEBUG "+"Hello World!");
         logger.info("Logger Level ：INFO "+"163");
