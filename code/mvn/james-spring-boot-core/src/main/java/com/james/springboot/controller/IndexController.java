@@ -12,7 +12,7 @@ import java.net.URI;
 @RestController
 public class IndexController {
     private Logger logger = LoggerFactory.getLogger(getClass());
-    @RequestMapping("/")
+    @RequestMapping("/hello")
     String home() {
         return "Hello World!"+"你好世界";
     }
