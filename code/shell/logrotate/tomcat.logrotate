@@ -1,0 +1,11 @@
+/home/james/software/apache-tomcat-8.0.36/logs/*.log {
+    copytruncate
+    daily
+    rotate 5
+    size 20M
+    nodateext
+    compress
+    missingok
+    notifempty
+    create 0644 root root
+}
