@@ -4,6 +4,7 @@ __author__='drawnkid@gmail.com'
 from bs4 import BeautifulSoup
 import json
 import re
+import logging
 
 html = """
 <html><head><title>The Dormouse's story</title></head>
@@ -16,6 +17,7 @@ html = """
 and they lived at the bottom of a well.</p>
 <p class="story">...</p>
 """
+
 host="http://cn.bing.com"
 def bingParser(html):
     #soup=BeautifulSoup(html,"html.parser")
@@ -86,13 +88,14 @@ def getImg(html):
     return imglist    
 def getJpg(html):
     reg = r'(url:.{10,90}jpg)'
+    logging.debug("Using re "+reg+" to get Jpg")
     jpgre= re.compile(reg)
     jpglist=re.findall(jpgre,html)
     if jpglist:
-        print(jpglist)
-        print(len(jpglist))
+        logging.debug("Get jpg list("+str(len(jpglist))+"):"+str(jpglist))
         jpgUrl = jpglist[0].split('"')[1]
         imageUrl = host+jpgUrl
+        logging.info("Get jpg url:"+imageUrl)
         return imageUrl
 
 #imglist = getImg(html)
