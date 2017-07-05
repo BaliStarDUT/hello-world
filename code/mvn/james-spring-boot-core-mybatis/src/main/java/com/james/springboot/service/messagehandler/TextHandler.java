@@ -40,14 +40,16 @@ public class TextHandler implements WxMessageHandler {
                 xmlOutMsg = WxXmlOutMessage.TEXT().content(msgText3).toUser(wxXmlMessage.getFromUserName()).fromUser(wxXmlMessage.getToUserName()).build();
                 break;
             case "picture":
-                String imgMeidaId = "5I0urdYNfz0hLJSD2-HZdoHQG01hxqw-ZUnEUQEJZEdz7aR0yWsX9-jb6qw-E6dg";
+                String imgMeidaId = "ZEhJJasSa4hEGVx3d8RF58bS1hau4LatABwGmRpvPc4BuOCH8306YTRgymhnFswr";
                 xmlOutMsg = WxXmlOutMessage.IMAGE().mediaId(imgMeidaId).build();
                 break;
             case "music":
                 xmlOutMsg = WxXmlOutMessage.MUSIC().title("黑默丁格")
+                        .toUser(wxXmlMessage.getFromUserName())
+                        .fromUser(wxXmlMessage.getToUserName())
                         .description("嗯，非常有趣").musicUri("http://lol.52pk.com/pifu/sounds/heimodingge/8.mp3")
                         .hQMusicUrl("http://lol.52pk.com/pifu/sounds/heimodingge/8.mp3")
-                        .thumbMediaId("3RtWsjhJ6QtGTAJ8u0Hu_Xfe9wIrhhuMw5FRb_s25kwWl8I65e-50-y2LM5GvgvY")
+                        .thumbMediaId("ZEhJJasSa4hEGVx3d8RF58bS1hau4LatABwGmRpvPc4BuOCH8306YTRgymhnFswr")
                         .build();
                 break;
             case "亚索":
@@ -55,31 +57,37 @@ public class TextHandler implements WxMessageHandler {
                         .description("我的剑比什么都重要！除了美酒")
                         .musicUri("http://lol.52pk.com/pifu/sounds/yasuo/30.mp3")
                         .hQMusicUrl("http://lol.52pk.com/pifu/sounds/yasuo/30.mp3")
-                        .thumbMediaId("3RtWsjhJ6QtGTAJ8u0Hu_Xfe9wIrhhuMw5FRb_s25kwWl8I65e-50-y2LM5GvgvY")
+                        .thumbMediaId("ZEhJJasSa4hEGVx3d8RF58bS1hau4LatABwGmRpvPc4BuOCH8306YTRgymhnFswr")
                         .build();
                 break;
             case "提莫":
                 xmlOutMsg = WxXmlOutMessage.MUSIC().title("提莫")
+                        .toUser(wxXmlMessage.getFromUserName())
+                        .fromUser(wxXmlMessage.getToUserName())
                         .description("提莫队长正在待命。")
                         .musicUri("http://lol.52pk.com/pifu/sounds/Teemo.mp3")
                         .hQMusicUrl("http://lol.52pk.com/pifu/sounds/Teemo.mp3")
-                        .thumbMediaId("3RtWsjhJ6QtGTAJ8u0Hu_Xfe9wIrhhuMw5FRb_s25kwWl8I65e-50-y2LM5GvgvY")
+                        .thumbMediaId("ZEhJJasSa4hEGVx3d8RF58bS1hau4LatABwGmRpvPc4BuOCH8306YTRgymhnFswr")
                         .build();
                 break;
             case "伊泽瑞尔":
                 xmlOutMsg = WxXmlOutMessage.MUSIC().title("伊泽瑞尔")
+                        .toUser(wxXmlMessage.getFromUserName())
+                        .fromUser(wxXmlMessage.getToUserName())
                         .description("是时候表演真正的技术了")
                         .musicUri("http://lol.52pk.com/pifu/sounds/Ezreal.mp3")
                         .hQMusicUrl("http://lol.52pk.com/pifu/sounds/Ezreal.mp3")
-                        .thumbMediaId("3RtWsjhJ6QtGTAJ8u0Hu_Xfe9wIrhhuMw5FRb_s25kwWl8I65e-50-y2LM5GvgvY")
+                        .thumbMediaId("ZEhJJasSa4hEGVx3d8RF58bS1hau4LatABwGmRpvPc4BuOCH8306YTRgymhnFswr")
                         .build();
                 break;
             case "费德提克":
                 xmlOutMsg = WxXmlOutMessage.MUSIC().title("费德提克")
+                        .toUser(wxXmlMessage.getFromUserName())
+                        .fromUser(wxXmlMessage.getToUserName())
                         .description("我知道你怕!")
                         .musicUri("http://lol.52pk.com/pifu/sounds/feidetike/7.mp3")
                         .hQMusicUrl("http://lol.52pk.com/pifu/sounds/feidetike/7.mp3")
-                        .thumbMediaId("3RtWsjhJ6QtGTAJ8u0Hu_Xfe9wIrhhuMw5FRb_s25kwWl8I65e-50-y2LM5GvgvY")
+                        .thumbMediaId("ZEhJJasSa4hEGVx3d8RF58bS1hau4LatABwGmRpvPc4BuOCH8306YTRgymhnFswr")
                         .build();
                 break;
             case "video":
