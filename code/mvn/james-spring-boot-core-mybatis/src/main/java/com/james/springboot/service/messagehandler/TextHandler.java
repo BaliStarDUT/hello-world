@@ -15,6 +15,7 @@ import java.util.Map;
  * Created by James Yang on 2017/6/29 0029 上午 11:19.
  */
 public class TextHandler implements WxMessageHandler {
+    public static String mediaId="ZEhJJasSa4hEGVx3d8RF58bS1hau4LatABwGmRpvPc4BuOCH8306YTRgymhnFswr";
     @Override
     public WxXmlOutMessage handle(WxXmlMessage wxXmlMessage, Map<String, Object> map, IService iService) throws WxErrorException {
         WxXmlOutMessage xmlOutMsg = null;
@@ -49,15 +50,17 @@ public class TextHandler implements WxMessageHandler {
                         .fromUser(wxXmlMessage.getToUserName())
                         .description("嗯，非常有趣").musicUri("http://lol.52pk.com/pifu/sounds/heimodingge/8.mp3")
                         .hQMusicUrl("http://lol.52pk.com/pifu/sounds/heimodingge/8.mp3")
-                        .thumbMediaId("ZEhJJasSa4hEGVx3d8RF58bS1hau4LatABwGmRpvPc4BuOCH8306YTRgymhnFswr")
+                        .thumbMediaId(mediaId)
                         .build();
                 break;
             case "亚索":
                 xmlOutMsg = WxXmlOutMessage.MUSIC().title("亚索")
+                        .toUser(wxXmlMessage.getFromUserName())
+                        .fromUser(wxXmlMessage.getToUserName())
                         .description("我的剑比什么都重要！除了美酒")
                         .musicUri("http://lol.52pk.com/pifu/sounds/yasuo/30.mp3")
                         .hQMusicUrl("http://lol.52pk.com/pifu/sounds/yasuo/30.mp3")
-                        .thumbMediaId("ZEhJJasSa4hEGVx3d8RF58bS1hau4LatABwGmRpvPc4BuOCH8306YTRgymhnFswr")
+                        .thumbMediaId(mediaId)
                         .build();
                 break;
             case "提莫":
@@ -67,7 +70,7 @@ public class TextHandler implements WxMessageHandler {
                         .description("提莫队长正在待命。")
                         .musicUri("http://lol.52pk.com/pifu/sounds/Teemo.mp3")
                         .hQMusicUrl("http://lol.52pk.com/pifu/sounds/Teemo.mp3")
-                        .thumbMediaId("ZEhJJasSa4hEGVx3d8RF58bS1hau4LatABwGmRpvPc4BuOCH8306YTRgymhnFswr")
+                        .thumbMediaId(mediaId)
                         .build();
                 break;
             case "伊泽瑞尔":
@@ -77,7 +80,7 @@ public class TextHandler implements WxMessageHandler {
                         .description("是时候表演真正的技术了")
                         .musicUri("http://lol.52pk.com/pifu/sounds/Ezreal.mp3")
                         .hQMusicUrl("http://lol.52pk.com/pifu/sounds/Ezreal.mp3")
-                        .thumbMediaId("ZEhJJasSa4hEGVx3d8RF58bS1hau4LatABwGmRpvPc4BuOCH8306YTRgymhnFswr")
+                        .thumbMediaId(mediaId)
                         .build();
                 break;
             case "费德提克":
@@ -87,7 +90,7 @@ public class TextHandler implements WxMessageHandler {
                         .description("我知道你怕!")
                         .musicUri("http://lol.52pk.com/pifu/sounds/feidetike/7.mp3")
                         .hQMusicUrl("http://lol.52pk.com/pifu/sounds/feidetike/7.mp3")
-                        .thumbMediaId("ZEhJJasSa4hEGVx3d8RF58bS1hau4LatABwGmRpvPc4BuOCH8306YTRgymhnFswr")
+                        .thumbMediaId(mediaId)
                         .build();
                 break;
             case "video":

@@ -24,7 +24,11 @@ public class ImageHandler implements WxMessageHandler {
             xmlOutMsg = WxXmlOutMessage.TEXT().content(msgText).toUser(wxXmlMessage.getFromUserName()).fromUser(wxXmlMessage.getToUserName()).build();
             return xmlOutMsg;
         }else {
-            xmlOutMsg = WxXmlOutMessage.IMAGE().mediaId(mediaId).build();
+            TextHandler.mediaId = mediaId;
+            xmlOutMsg = WxXmlOutMessage.IMAGE()
+                    .toUser(wxXmlMessage.getFromUserName())
+                    .fromUser(wxXmlMessage.getToUserName())
+                    .mediaId(mediaId).build();
         }
         return xmlOutMsg;
     }

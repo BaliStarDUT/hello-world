@@ -55,7 +55,7 @@ public class WxController {
         try {
             // 微信服务器推送过来的是XML格式。
             WxXmlMessage wx = XStreamTransformer.fromXml(WxXmlMessage.class, request.getInputStream());
-            logger.debug("收到的消息:"+wx.toString());
+            logger.debug("收到的消息："+wx.toString());
 
             // 添加规则；这里的规则是所有消息都交给DemoMatcher处理，交给DemoInterceptor处理，交给DemoHandler处理
             // 注意！！每一个规则，必须由end()或者next()结束。不然不会生效。
@@ -72,8 +72,10 @@ public class WxController {
                     .end();
             // 把消息传递给路由器进行处理
             WxXmlOutMessage xmlOutMsg = router.route(wx);
-            if (xmlOutMsg != null)
+            if (xmlOutMsg != null){
+                logger.debug("返回的响应："+xmlOutMsg.toString());
                 out.print(xmlOutMsg.toXml());// 因为是明文，所以不用加密，直接返回给用户。
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

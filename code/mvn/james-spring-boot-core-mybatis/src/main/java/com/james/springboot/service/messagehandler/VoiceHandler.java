@@ -23,10 +23,16 @@ public class VoiceHandler  implements WxMessageHandler {
         if(StringUtils.isEmpty(mediaId) || StringUtils.isEmpty(recognition)){
             Date date = new Date();
             String msgText = "素材类型:"+msgType+"。\n现在的时间是"+(date.toString());
-            xmlOutMsg = WxXmlOutMessage.TEXT().content(msgText).toUser(wxXmlMessage.getFromUserName()).fromUser(wxXmlMessage.getToUserName()).build();
+            xmlOutMsg = WxXmlOutMessage.TEXT()
+                    .content(msgText)
+                    .toUser(wxXmlMessage.getFromUserName())
+                    .fromUser(wxXmlMessage.getToUserName()).build();
             return xmlOutMsg;
         }
-        xmlOutMsg = WxXmlOutMessage.TEXT().content("你是说："+recognition).toUser(wxXmlMessage.getFromUserName()).fromUser(wxXmlMessage.getToUserName()).build();
+        xmlOutMsg = WxXmlOutMessage.TEXT()
+                .content("你是说："+recognition)
+                .toUser(wxXmlMessage.getFromUserName())
+                .fromUser(wxXmlMessage.getToUserName()).build();
         return xmlOutMsg;
     }
 }

@@ -123,6 +123,9 @@
               </includes>
               <targetPath>BOOT-INF/lib</targetPath>
           </resource>
+          <resource>
+              <directory>src/main/resources</directory>
+          </resource>
       </resources>
     </build>
 
