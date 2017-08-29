@@ -1,0 +1,18 @@
+2017-07-07 23:30:34 saveImage.py[line:19] INFO From:http://cn.bing.com
+2017-07-07 23:30:34 request.py[line:12] DEBUG Get Response:125939
+2017-07-07 23:30:34 parseHtml.py[line:91] DEBUG Using re (url:.{10,90}jpg) to get Jpg
+2017-07-07 23:30:34 parseHtml.py[line:95] DEBUG Get jpg list(2):['url: "/az/hprichbg/rb/Umbrella_ZH-CN8238029705_1920x1080.jpg', "url:'\\/az\\/hprichbg\\/rb\\/CharcoAzul_ZH-CN9886873901_1920x1080.jpg"]
+2017-07-07 23:30:34 parseHtml.py[line:98] INFO Get jpg url:http://cn.bing.com/az/hprichbg/rb/Umbrella_ZH-CN8238029705_1920x1080.jpg
+2017-07-07 23:30:34 saveImage.py[line:24] INFO Image url:http://cn.bing.com/az/hprichbg/rb/Umbrella_ZH-CN8238029705_1920x1080.jpg
+2017-07-07 23:30:34 saveImage.py[line:26] INFO Image file name:Umbrella_ZH-CN8238029705_1920x1080.jpg
+2017-07-07 23:30:34 saveImage.py[line:30] INFO Image file url:http://cn.bing.com/az/hprichbg/rb/Umbrella_ZH-CN8238029705_1920x1080.jpg
+2017-07-07 23:30:35 saveImage.py[line:36] INFO Save file :http://cn.bing.com/az/hprichbg/rb/Umbrella_ZH-CN8238029705_1920x1080.jpg
+2017-07-10 20:33:14 saveImage.py[line:19] INFO From:http://cn.bing.com
+2017-07-10 20:33:15 request.py[line:12] DEBUG Get Response:125898
+2017-07-10 20:33:15 parseHtml.py[line:91] DEBUG Using re (url:.{10,90}jpg) to get Jpg
+2017-07-10 20:33:15 parseHtml.py[line:95] DEBUG Get jpg list(2):['url: "/az/hprichbg/rb/DerbyshireSheep_ZH-CN8057416029_1920x1080.jpg', "url:'\\/az\\/hprichbg\\/rb\\/MartapuraMarket_ZH-CN9502204987_1920x1080.jpg"]
+2017-07-10 20:33:15 parseHtml.py[line:98] INFO Get jpg url:http://cn.bing.com/az/hprichbg/rb/DerbyshireSheep_ZH-CN8057416029_1920x1080.jpg
+2017-07-10 20:33:15 saveImage.py[line:24] INFO Image url:http://cn.bing.com/az/hprichbg/rb/DerbyshireSheep_ZH-CN8057416029_1920x1080.jpg
+2017-07-10 20:33:15 saveImage.py[line:26] INFO Image file name:DerbyshireSheep_ZH-CN8057416029_1920x1080.jpg
+2017-07-10 20:33:15 saveImage.py[line:30] INFO Image file url:http://cn.bing.com/az/hprichbg/rb/DerbyshireSheep_ZH-CN8057416029_1920x1080.jpg
+2017-07-10 20:33:15 saveImage.py[line:36] INFO Save file :http://cn.bing.com/az/hprichbg/rb/DerbyshireSheep_ZH-CN8057416029_1920x1080.jpg
