@@ -1,5 +1,5 @@
 //冒泡排序 5-1
-class Bubble{
+class BubbleSort{
 	public static void main(String[] args){
 		int[] nums={99,-10,100123,18,-987,5632,463,-9,284,49};
 		int a,b,t;
