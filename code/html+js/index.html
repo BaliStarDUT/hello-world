@@ -1,5 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
+<head>
+<title>Positon</title>
+</head>
 <body>
 <p>Clike the Button to show your position</p>
 <p id="demo">Your place:</p>
@@ -27,7 +30,7 @@ function showPosition(position)
   var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
   +latlon1+"&zoom=14&size=400x300&sensor=false";
   document.getElementById("mapholder").innerHTML="<img src='"+img_url+"' />";
-  x.innerHTML="Latitude: " + position.coords.latitude + 
+  x.innerHTML="Latitude: " + position.coords.latitude +
   "<br />Longitude: " + position.coords.longitude +
   "<br />Accuracy: " + position.coords.accuracy +
   "<br />Altitude: " + position.coords.altitude +
@@ -55,7 +58,7 @@ function showPosition(position)
 
 function showError(error)
   {
-  switch(error.code) 
+  switch(error.code)
     {
     case error.PERMISSION_DENIED:
       x.innerHTML="User denied the request for Geolocation."
