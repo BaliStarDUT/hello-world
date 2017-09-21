@@ -10,27 +10,27 @@ public class JdbcDemo1 {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		//要连接的数据库URL
-        String url = "jdbc:mysql://localhost:3306/sushe";
+        String url = "jdbc:mysql://192.168.99.101:3306/bitnami_moodle";
         System.out.println("The database you will connect is :"+url);
         //连接的数据库时使用的用户名
         String username = "root";
         //连接的数据库时使用的密码
         String password = "root";
-        
+
         //1.加载驱动
         //DriverManager.registerDriver(new com.mysql.jdbc.Driver());不推荐使用这种方式来加载驱动
         Class.forName("com.mysql.jdbc.Driver");//推荐使用这种方式来加载驱动
         //2.获取与数据库的链接
         Connection conn = DriverManager.getConnection(url, username, password);
-        
+
         //3.获取用于向数据库发送sql语句的statement
         Statement st = conn.createStatement();
-        
+
         String sql = "select Student_ID,Student_Name,Student_Password,Student_Class,Student_Sex from student";
         System.out.println("The sql is:"+sql);
         //4.向数据库发sql,并获取代表结果集的resultset
         ResultSet rs = st.executeQuery(sql);
-        
+
         //5.取出结果集的数据
         System.out.println("The result is:");
         while(rs.next()){
