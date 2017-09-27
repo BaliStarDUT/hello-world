@@ -25,9 +25,9 @@ public class ReaderCSVFile {
 			int totalRead = 0;
 			while((saying = fileIn.readLine())!=null){
 				//System.out.println(saying);
-				readStr(saying); 
+				readStr(saying);
 				//System.out.println();
-								
+
 				++totalRead;
 			}
 			System.out.format("%d sayings read.%n", totalRead);
@@ -53,5 +53,5 @@ public class ReaderCSVFile {
 		int b = str.lastIndexOf('"');
 		return str.substring(a+1, b);
 	}
-	
+
 }

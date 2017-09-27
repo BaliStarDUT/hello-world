@@ -12,7 +12,7 @@ import java.util.Locale;
 * @author: yangzhen
 * @date: 2014-8-29 下午10:03:26
 *
-*/ 
+*/
 public class DateFormatTest {
 
     public static void main(String[] args) throws ParseException {
@@ -32,6 +32,11 @@ public class DateFormatTest {
         df = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.LONG,Locale.CHINA);
         result = df.format(date);
         System.out.println("以中国日期时间形式输出日期时间部分："+result);
+
+        // 输出日期和时间
+        df = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT,Locale.ENGLISH);
+        result = df.format(date);
+        System.out.println("以美国日期时间形式输出日期时间部分："+result);
 
         // 把字符串反向解析成一个date对象
         String s = "10-9-26 下午02时49分53秒";
