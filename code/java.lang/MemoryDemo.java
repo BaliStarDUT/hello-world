@@ -20,8 +20,8 @@ class MemoryDemo{
 		for(int i=0;i<1000;i++){
 			someints[i]=null;
 		}
-r.gc();
-mem2=r.freeMemory();
-System.out.println("Free memory after collecting "+" discarded Integers: "+mem2);
+		r.gc();
+		mem2=r.freeMemory();
+		System.out.println("Free memory after collecting "+" discarded Integers: "+mem2);
 	}
 }
