@@ -11,7 +11,7 @@ public class ThreadCloseTest2 {
                 e.printStackTrace();
             }
         });
-        service.listener(4 * 1000);
+        service.listener(2 * 1000);
         System.out.println("一共耗时：" + (System.currentTimeMillis() - start));
     }
 
@@ -23,6 +23,7 @@ class WorkerService {
 
     public void execute(Runnable task) {
         executeService = new Thread(() -> {
+            System.out.println("主线程开始运行....");
             Thread runner = new Thread(task);
             runner.setDaemon(true);
             runner.start();
@@ -40,6 +41,7 @@ class WorkerService {
         System.out.println("开启监听......");
         long currentTime = System.currentTimeMillis();
         while (!finished) {
+            System.out.println("检查来了......");
             if ((System.currentTimeMillis() - currentTime) >= mills) {
                 System.out.println("工作耗时过长,开始打断...");
                 executeService.interrupt();//打断线程
