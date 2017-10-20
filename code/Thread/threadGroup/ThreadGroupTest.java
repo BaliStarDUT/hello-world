@@ -10,7 +10,7 @@ class ThreadGroupTest{
     t2.start();
     t3.start();
     try{
-      stackSizeTest(group);
+      // stackSizeTest(group);
     }catch(Exception e){
       e.printStackTrace();
     }
