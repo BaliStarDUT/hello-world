@@ -1,4 +1,4 @@
-package yang.java.test;
+// package yang.java.test;
 
 import java.net.Socket;
 import java.io.OutputStream;
@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 
 import java.io.PrintWriter;
 /*
-»ùÓÚTCPÐ­ÒéµÄSocketÍ¨ÐÅ£¬¿Í»§¶Ë¶Ë£¬ÊµÏÖÓÃ»§µÇÂ¼
+ï¿½ï¿½ï¿½ï¿½TCPÐ­ï¿½ï¿½ï¿½ï¿½SocketÍ¨ï¿½Å£ï¿½ï¿½Í»ï¿½ï¿½Ë¶Ë£ï¿½Êµï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Â¼
 */
 /**
  * @author yangzhene
@@ -19,22 +19,25 @@ import java.io.PrintWriter;
 public class Client{
 public static void main(String[] args){
 	try{
-		//1.´´½¨¿Í»§¶ËSocket
-		Socket socket = new Socket("localhost",8888);
-		//2.»ñÈ¡Êä³öÁ÷£¬Ïò·þÎñÆ÷·¢ËÍÐÅÏ¢
-		OutputStream os = socket.getOutputStream();//×Ö½ÚÊä³öÁ÷
-		PrintWriter pw = new PrintWriter(os);//½«Êä³öÁ÷°ü×°³É´òÓ¡Á÷
+		//1.ï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½Socket
+		Socket socket = new Socket("localhost",32773);
+		//2.ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+		OutputStream os = socket.getOutputStream();//ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		PrintWriter pw = new PrintWriter(os);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½É´ï¿½Ó¡ï¿½ï¿½
 		pw.write("user name:admin;password:yang");
 		pw.flush();
 		socket.shutdownOutput();
-		//3.»ñÈ¡ÊäÈëÁ÷
+		//3.ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		InputStream is = socket.getInputStream();
+		System.out.println(is);
+		System.out.println(socket.isConnected());
+
 		BufferedReader br = new BufferedReader(new InputStreamReader(is));
 		String info = null;
 		while((info = br.readLine())!=null){
 			System.out.println("I am the client Server says:"+info);
 		}
-		//4.¹Ø±Õ×ÊÔ´
+		//4.ï¿½Ø±ï¿½ï¿½ï¿½Ô´
 		br.close();
 		is.close();
 		pw.close();
