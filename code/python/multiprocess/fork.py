@@ -4,6 +4,7 @@ __author__='drawnkid@gmail.com'
 import os
 print('Process(%s) start...' % os.getpid())
 pid=os.fork()
+print(pid)
 if pid==0:
     print('Im child process (%s) and parent is %s.' %(os.getpid(),os.getppid()))
 else:
