@@ -10,7 +10,7 @@ public class JdbcDemo1 {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		//要连接的数据库URL
-        String url = "jdbc:mysql://192.168.99.101:3306/bitnami_prestashop";
+        String url = "jdbc:mysql://192.168.99.101:3306/opencron";
         System.out.println("The database you will connect is :"+url);
         //连接的数据库时使用的用户名
         String username = "root";
