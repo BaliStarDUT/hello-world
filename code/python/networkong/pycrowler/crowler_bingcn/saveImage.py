@@ -20,7 +20,7 @@ logging.basicConfig(level=logging.DEBUG,
 #间隔多长时间
 DYNAMIC_CHECK_INTERVAL = 24*60*60
 #循环多少次
-DYNAMIC_CHECK_COUNT = 24
+DYNAMIC_CHECK_COUNT = 3
 
 def getImgUrlAndName():
     host="http://cn.bing.com"
@@ -35,7 +35,7 @@ def getImgUrlAndName():
     return imageurl,fileName
 
 #传入图片地址，文件名，保存单张图片
-def saveImg(now_str):
+def saveImg():
     imageURL,fileName = getImgUrlAndName()
     url = (imageURL)
     logging.info('Image file url:'+url)
@@ -58,7 +58,7 @@ def schedule_run():
         now_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         sched_str = sched_time.strftime('%Y-%m-%d %H:00:00')  # schedule to next sharp hour.
         logging.info('now time:%s; next time:%s'% (now_str,sched_str))
-        s.enter(DYNAMIC_CHECK_INTERVAL,1,saveImg,(now_str))
+        s.enter(DYNAMIC_CHECK_INTERVAL,1,saveImg,())
         s.run()
         logging.info('Get images round %d end.' % (count + 1))
         count +=1

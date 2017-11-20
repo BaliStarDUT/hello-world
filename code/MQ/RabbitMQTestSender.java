@@ -9,7 +9,7 @@ public class RabbitMQTestSender{
   public static void main(String[] args) throws IOException,TimeoutException{
     ConnectionFactory factory = new ConnectionFactory();
     factory.setHost("localhost");
-    factory.setPort(32773);
+    factory.setPort(32777);
     factory.setUsername("yang");
     factory.setPassword("yang");
     Connection connection = factory.newConnection();

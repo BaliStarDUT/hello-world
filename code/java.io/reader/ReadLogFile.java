@@ -9,7 +9,7 @@ import java.text.ParseException;
 
 public class ReadLogFile{
   public static void main(String[] args)throws IOException,ParseException{
-    String file = "/Users/air/code/access.log";
+    String file = "access.log";
     Path filePath = Paths.get(file);
     ReadLogFile.readLogFile(filePath);
     // ReadLogFile.parseLine();

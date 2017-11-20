@@ -1,0 +1,26 @@
+version: '2'
+services:
+  mariadb:
+    image: 'bitnami/mariadb:latest'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - '3306:3306'
+    volumes:
+      - 'mariadb_data:/bitnami'
+  moodle:
+    image: 'bitnami/moodle:latest'
+    labels:
+      kompose.service.type: nodeport
+    ports:
+      - '82:80'
+      - '445:443'
+    volumes:
+      - 'moodle_data:/bitnami'
+    depends_on:
+      - mariadb
+volumes:
+  mariadb_data:
+    driver: local
+  moodle_data:
+    driver: local

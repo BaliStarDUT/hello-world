@@ -31,9 +31,9 @@ public class GenEntityFromTable {
     private boolean f_sql = false; // 是否需要导入包java.sql.*
 
     //数据库连接
-    private static final String URL ="jdbc:mysql://localhost:3306/bitnami_wordpress";
+    private static final String URL ="jdbc:mysql://localhost:3306/bitnami_prestashop";
     private static final String NAME = "root";
-    private static final String PASS = "yang";
+    private static final String PASS = "";
     private static final String DRIVER ="com.mysql.jdbc.Driver";
 
     /*

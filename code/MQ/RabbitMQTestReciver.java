@@ -14,7 +14,7 @@ public class RabbitMQTestReciver{
   public static void main(String[] args) throws IOException,TimeoutException{
     ConnectionFactory factory = new ConnectionFactory();
     factory.setHost("127.0.0.1");
-    factory.setPort(32772);
+    factory.setPort(32777);
     Connection connection = factory.newConnection();
     Channel channel = connection.createChannel();
     channel.queueDeclare(QUEUE_NAME, false, false, false, null);

@@ -1,15 +1,17 @@
 //package yang.jdbc;
 
+import org.junit.Test;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class JdbcDemo1 {
-
-	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		//要连接的数据库URL
+public class JdbcTest {
+    @Test
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        //要连接的数据库URL
         String url = "jdbc:mysql://192.168.99.101:3306/bitnami_prestashop";
         System.out.println("The database you will connect is :"+url);
         //连接的数据库时使用的用户名
@@ -42,11 +44,11 @@ public class JdbcDemo1 {
         }
         //6.使用excuteUpdate(String sql)方法完成数据的添加操作
         String sql2="insert into student(Student_DomitoryID,Student_Username,Student_Password,Student_Name,Student_Sex,Student_Class,Student_State)"
-        		+ "values(1,'001','123','yang','男','信管1101','入住')";
+                + "values(1,'001','123','yang','男','信管1101','入住')";
         System.out.println(">Insert into a new list:"+sql2);
         int num = st.executeUpdate(sql2);
         if(num>0){
-        	System.out.println("Insert Success!!");
+            System.out.println("Insert Success!!");
         }
         //6.关闭链接，释放资源
         System.out.println("Now close the connection!");
@@ -54,6 +56,6 @@ public class JdbcDemo1 {
         st.close();
         conn.close();
 
-	}
+    }
 
 }

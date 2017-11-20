@@ -1,4 +1,4 @@
-package com.james.springboot.mq.reveiver;
+package com.james.springboot.service.mq.reveiver;
 
 import org.springframework.stereotype.Component;
 
