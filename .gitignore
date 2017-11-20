@@ -8,3 +8,5 @@
 *.pyc
 *.hprof
 **.DS_Store
+*.log
+*.jar
