@@ -1,5 +1,9 @@
 //package yang.jdbc;
 
+/**
+* javac -cp /Users/aliyun/.m2/repository/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar JdbcDemo1.java
+* java -cp .:/Users/aliyun/.m2/repository/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar JdbcDemo1
+*/
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;

@@ -14,17 +14,24 @@ class SendEmailTest{
       // Recipient's email ID needs to be mentioned.
       String to = "drawnkid@yeah.net";
       // Sender's email ID needs to be mentioned
-      String from = "drawnkid@yeah.net";
+      String from = "664005985@qq.com";
       // Assuming you are sending email from localhost
-     String host = "localhost";
+     String host = "smtp.qq.com";
      // Get system properties
      Properties properties = System.getProperties();
      // Setup mail server
-     properties.setProperty("mail.smtp.host", host);
-     properties.setProperty("mail.smtp.port", "32769");
+     properties.setProperty("mail.user","664005985@qq.com");
+     properties.setProperty("mail.password","balixianluo03041yz");
 
+     properties.setProperty("mail.smtp.host", host);
+     properties.setProperty("mail.smtp.port", "465");
+     properties.setProperty("mail.smtp.auth","true");
+     properties.setProperty("mail.smtp.socketFactory.port","465");
+     properties.setProperty("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
+     properties.setProperty("mail.smtp.socketFactory.fallback","false");
      properties.setProperty("mail.protocol.host", host);
-     properties.setProperty("mail.protocol.port", "32769");
+     properties.setProperty("mail.protocol.port", "465");
+
     //  properties.setProperty("mail.protocol.user", "host");
 
      // Get the default Session object.
@@ -44,7 +51,12 @@ class SendEmailTest{
          message.setText("This is actual message");
 
          // Send message
-         Transport.send(message);
+         Transport transport = session.getTransport("smtp");
+         transport.connect(host, from, "mrvmktmrtcwpbcce");
+         transport.sendMessage(message, message.getAllRecipients());
+         transport.close();
+
+        //  Transport.send(message);
          System.out.println("Sent message successfully....");
       }catch (MessagingException mex) {
          mex.printStackTrace();

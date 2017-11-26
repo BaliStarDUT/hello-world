@@ -1,8 +1,14 @@
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+/*
+* javac -cp /Users/aliyun/.m2/repository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar FileTest.java
+* java -cp .:/Users/aliyun/.m2/repository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar FileTest
+*/
 
 //File类的基本用法
 class FileTest{
@@ -28,10 +34,6 @@ class FileTest{
 		System.out.println(file.getName());
 		System.out.println(file.getParent());
 		FileTest.listDirectory(new File("/Users/aliyun/Desktop/截图"));
-
-		//系统属性类Properties类
-		java.util.Properties properties = System.getProperties();
-		properties.list(System.out);
 	}
 	//列出指定目录（包括其子目录）下所有文件
 	public static void listDirectory(File dir) throws IOException{
@@ -42,10 +44,10 @@ class FileTest{
 			throw new IllegalArgumentException(dir+" is now a directory!");
 		}
 		//System.out.println(dir.list());
-		String[] filenames = dir.list();
-		for(String string:filenames){
-			System.out.println(dir+"/"+string);
-		}
+		// String[] filenames = dir.list();
+		// for(String string:filenames){
+		// 	System.out.println(dir+"/"+string);
+		// }
 		//返回直接子目录的File对象
 		File[] files = dir.listFiles();
 		if(files!=null && files.length>0){
