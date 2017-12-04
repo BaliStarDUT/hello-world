@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.List;
+import java.util.ArrayList;
 
 /*
 * javac -cp /Users/aliyun/.m2/repository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar FileTest.java
@@ -36,13 +38,14 @@ class FileTest{
 		FileTest.listDirectory(new File("/Users/aliyun/Desktop/截图"));
 	}
 	//列出指定目录（包括其子目录）下所有文件
-	public static void listDirectory(File dir) throws IOException{
+	public static List<String> listDirectory(File dir) throws IOException{
 		if(!dir.exists()){
 			throw new IllegalArgumentException("Directory:"+dir+" doesn`t exists!");
 		}
 		if(!dir.isDirectory()){
 			throw new IllegalArgumentException(dir+" is now a directory!");
 		}
+		List<String> fileList = new ArrayList<String>();
 		//System.out.println(dir.list());
 		// String[] filenames = dir.list();
 		// for(String string:filenames){
@@ -51,16 +54,17 @@ class FileTest{
 		//返回直接子目录的File对象
 		File[] files = dir.listFiles();
 		if(files!=null && files.length>0){
-		for(File file:files){
+			for(File file:files){
 				if(file.isDirectory()){
 					//递归操作
 					System.out.println(file.getName()+"-");
 					listDirectory(file);
 				}else{
 					System.out.println(file.getName());
+					fileList.add(file.getName());
 				}
 			}
 		}
-
+		return fileList;
 	}
 }

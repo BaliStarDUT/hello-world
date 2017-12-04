@@ -14,6 +14,22 @@ Student_DomitoryID smallint,
 Student_Username varchar(50),
 PRIMARY KEY Student_ID
 )
+mysql DMS
+CREATE TABLE `student` (
+	`Student_ID` int(11) NOT NULL,
+	`Student_Name` varchar(32) NULL,
+	`Student_Password` varchar(32) NULL,
+	`Student_State` varchar(32) NULL,
+	`Student_Class` varchar(32) NULL,
+	`Student_Sex` varchar(32) NULL,
+	`Student_DomitoryID` varchar(32) NULL,
+	`Student_Username` varchar(32) NULL,
+	PRIMARY KEY (`Student_ID`)
+) ENGINE=InnoDB
+DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci;
+ALTER TABLE `student`
+	MODIFY COLUMN `Student_ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT FIRST;
+
 
 create  table "public"."student"
 (
@@ -36,6 +52,8 @@ COMMENT ON TABLE "public"."student" IS 'student';
 
 insert into "public"."student"("Student_Name","Student_Password","Student_State","Student_Class","Student_Sex","Student_DomitoryID","Student_Username") values('yangzhen','yangzhen','up','1','1',1,'yang');
 insert into "public"."student"("Student_Name","Student_Password","Student_State","Student_Class","Student_Sex","Student_DomitoryID","Student_Username") values('yang','yang','yang','yang','yang',12,'yang');
+insert into student(Student_DomitoryID,Student_Username,Student_Password,Student_Name,Student_Sex,Student_Class,Student_State) values(1,'001','123','yang','男','信管1101','入住')
+
 */
 import java.sql.Connection;
 import java.sql.DriverManager;
