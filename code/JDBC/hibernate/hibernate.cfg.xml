@@ -1,0 +1,31 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- 一、数据库信息：数据库方言（是一个类的全名）与数据库连接信息 -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="connection.url">jdbc:mysql://192.168.99.101:3306/opencron</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.username">root</property>
+		<!-- <property name="connection.password">r</property> -->
+
+		<!-- 二、其他配置 -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">false</property>
+		<!--
+			create: 先删表，再建表。
+			create-drop: 启动时建表，退出前删表。
+			update: 如果表结构不一致，就创建或更新。
+			validate: 启动时验证表结构，如果不致就抛异常。
+		 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+
+		<!-- 三、导入映射配置文件
+		<mapping resource="cn/itcast/a_helloworld/User.hbm.xml"/>
+		 -->
+
+	</session-factory>
+</hibernate-configuration>
