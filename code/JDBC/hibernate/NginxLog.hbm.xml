@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="hibernate.NginxLog" table="nginx_log">
+		<id name="id" type="int" column="id">
+            <generator class="native"/>
+		</id>
+		<property name="remote_addr" type="string" not-null="true" column="remote_addr"/>
+    <property name="remote_user" type="string" not-null="true" column="remote_user"/>
+    <property name="time_local" type="date" not-null="true" column="time_local"/>
+    <property name="request" type="string" not-null="true" column="request"/>
+    <property name="status" type="int" not-null="true" column="status"/>
+    <property name="request_length" type="int" not-null="true" column="request_length"/>
+    <property name="http_referer" type="string" not-null="true" column="http_referer"/>
+    <property name="http_user_agent" type="string" not-null="true" column="http_user_agent"/>
+    <property name="request_time" type="string" not-null="true" column="request_time"/>
+
+	</class>
+
+</hibernate-mapping>

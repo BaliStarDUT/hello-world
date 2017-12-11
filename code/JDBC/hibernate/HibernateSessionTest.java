@@ -1,5 +1,8 @@
 package hibernate;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import reader.ReadLogFile;
 /**
 * javac -cp .:/Users/aliyun/.m2/repository/org/hibernate/hibernate-core/5.0.9.Final/hibernate-core-5.0.9.Final.jar HibernateTest.java
 *
@@ -8,15 +11,48 @@ java -cp .:hibernate/:/Users/aliyun/.m2/repository/org/hibernate/hibernate-core/
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.Transaction;
 // import HerosDao;
 
-public class HibernateTest{
+public class HibernateSessionTest{
   private static SessionFactory sessionFactory = new Configuration()
     .configure()
+    .addClass(NginxLog.class)
     .addClass(ShadowSocksLog.class)
     .buildSessionFactory();
 
-  public static void main(String[] args) {
+  private static Session session = sessionFactory.openSession();
+  public static void main(String[] args) throws Exception{
     System.out.println(sessionFactory.toString());
+    // sessionFactory.
+    // String file = "/Users/aliyun/code/web/access.log";
+    // Path filePath = Paths.get(file);
+    // ReadLogFile.readLogFile(filePath);
+  }
+  public void saveNginxLog(NginxLog log){
+    //   Session sess = factory.openSession();
+       Transaction tx = null;
+       try {
+           tx = session.beginTransaction();
+           session.save(log);
+           session.flush();
+           tx.commit();
+       }catch (Exception e) {
+           if (tx!=null) tx.rollback();
+           throw e;
+       }
+  }
+  public void saveShadowLog(ShadowSocksLog log){
+    //   Session sess = factory.openSession();
+       Transaction tx = null;
+       try {
+           tx = session.beginTransaction();
+           session.save(log);
+           session.flush();
+           tx.commit();
+       }catch (Exception e) {
+           if (tx!=null) tx.rollback();
+           throw e;
+       }
   }
 }
