@@ -5,6 +5,7 @@ import org.tio.server.intf.ServerAioHandler;
 import org.tio.core.ChannelContext;
 import org.tio.core.GroupContext;
 import org.tio.core.intf.Packet;
+import org.tio.core.Aio;
 
 import org.tio.core.exception.AioDecodeException;
 import top.hunaner.tio.common.HelloPacket;
@@ -18,7 +19,14 @@ public class HelloServerAioHandler implements ServerAioHandler{
   }
   @Override
   public ByteBuffer encode(Packet packet, GroupContext groupContext, ChannelContext channelContext){
-    ByteBuffer buffer = new ByteBuffer();
+    HelloPacket helloPacket = (HelloPacket) packet;
+	byte[] body = helloPacket.getBody();
+	int bodyLen = 0;
+    if (body != null) {
+		bodyLen = body.length;
+	}
+	int allLen = HelloPacket.Header_Lenghth + bodyLen;
+    ByteBuffer buffer = ByteBuffer.allocate(allLen);
     return buffer;
   }
 
@@ -32,7 +40,7 @@ public class HelloServerAioHandler implements ServerAioHandler{
 
   			HelloPacket resppacket = new HelloPacket();
   			resppacket.setBody(("收到了你的消息，你的消息是:" + str).getBytes(HelloPacket.CHARSET));
-  			// Aio.send(channelContext, resppacket);
+  			Aio.send(channelContext, resppacket);
   		}
   		return "";
   }
