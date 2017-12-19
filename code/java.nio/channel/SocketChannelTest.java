@@ -11,9 +11,10 @@ import java.nio.ByteBuffer;
 
 
 class SocketChannelTest{
-  public static void main(String[] args) throws FileNotFoundException,IOException{
+  public static void main(String[] args) throws InterruptedException,FileNotFoundException,IOException{
     SocketChannel socketChannel = SocketChannel.open();
     socketChannel.connect(new InetSocketAddress("localhost", 9999));
+    Thread.sleep(5000);
     String newData = "New String to write to file..." + System.currentTimeMillis();
 
     ByteBuffer buf = ByteBuffer.allocate(48);
