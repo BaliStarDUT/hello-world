@@ -1,5 +1,17 @@
 //Demostrate totalMemory(),freeMemory() and gc()
 class MemoryDemo{
+	@Override
+	public String toString(){
+		return "MemoryDemo";
+	}
+	@Override
+	public int hashCode(){
+		return 1;
+	}
+	@Override
+	public boolean equals(Object object){
+		return true;
+	}
 	public static void main(String[] args){
 		Runtime r=Runtime.getRuntime();
 		long mem1,mem2;
