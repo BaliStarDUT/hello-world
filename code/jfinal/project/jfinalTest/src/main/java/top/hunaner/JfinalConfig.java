@@ -31,5 +31,11 @@ public class JfinalConfig extends JFinalConfig{
     public void configEngine(Engine engine){
 
     }
+    public void afterJFinalStart(){
+        System.out.println("afterJFinalStart--------------");
+    }
+    public void beforeJFinalStop(){
+        System.out.println("beforeJFinalStop---------------");
+    }
 
 }

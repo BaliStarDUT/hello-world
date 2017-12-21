@@ -1,0 +1,3 @@
+interface Subject {
+    void request();
+}
