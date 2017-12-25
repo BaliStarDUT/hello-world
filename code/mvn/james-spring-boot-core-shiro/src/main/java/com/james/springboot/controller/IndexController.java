@@ -3,13 +3,14 @@ package com.james.springboot.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.awt.*;
 import java.net.URI;
 
-@RestController
+@Controller
 public class IndexController {
     private Logger logger = LoggerFactory.getLogger(getClass());
     @RequestMapping("/hello")
@@ -17,9 +18,9 @@ public class IndexController {
         return "Hello World!"+"你好世界";
     }
 
-    @RequestMapping("/hello")
+    @RequestMapping("/login")
     String hello() {
-        return "Hello World";
+        return "login";
     }
 
     @Scheduled(fixedDelay=50000)
