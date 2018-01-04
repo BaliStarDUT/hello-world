@@ -20,7 +20,13 @@ public class JfinalConfig extends JFinalConfig{
         me.add("/hello", HelloController.class);
     }
 	public void configPlugin(Plugins me) {
-
+        // loadPropertyFile("your_app_config.txt");
+        // DruidPlugin dp = new DruidPlugin(getProperty("jdbcUrl"),getProperty("user"), getProperty("password"));
+        DruidPlugin dp = new DruidPlugin("jdbc:sqlite:ghost.db","", "");
+        me.add(dp);
+        ActiveRecordPlugin arp = new ActiveRecordPlugin(dp);
+        me.add(arp);
+        // arp.addMapping("user", User.class);
     }
 	public void configInterceptor(Interceptors me) {
         me.add(new LogInterceptor());

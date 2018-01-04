@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.james</groupId>
-    <artifactId>james-spring-boot-core</artifactId>
+    <artifactId>james-spring-boot-core-shiro</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <parent>
@@ -15,6 +15,9 @@
         <version>1.5.2.RELEASE</version>
     </parent>
 
+    <properties>
+        <jfinal.version>3.4-SNAPSHOT</jfinal.version>
+    </properties>
     <!-- Additional lines to be added here... -->
     <dependencies>
         <dependency>
@@ -53,6 +56,17 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.0.29</version>
+        </dependency>
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <!--<version></version>-->
+            <systemPath>${project.basedir}/src/main/resources/sqlite-jdbc-3.21.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.jfinal</groupId>
+            <artifactId>jfinal-java8</artifactId>
+            <version>${jfinal.version}</version>
         </dependency>
     </dependencies>
 
