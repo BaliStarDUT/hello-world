@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<meta charset="utf-8" />
+<title>James的实验台</title>
+        <meta name="keywords" content="实验,尝试,学习"/>
+        <meta name="description" content="在不断尝试中学习"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="author" content="James的实验台" />
+<meta name="generator" content="Solo" />
+<meta name="owner" content="B3log Team" />
+<meta name="revised" content="James的实验台, 2018" />
+<meta name="copyright" content="B3log" />
+<meta http-equiv="Window-target" content="_top" />
+<link type="text/css" rel="stylesheet" href="http://hunaner.top:8080/skins/9IPHP/css/base.min.css?1513847163298" charset="utf-8" />
+<link href="http://hunaner.top:8080/blog-articles-rss.do" title="RSS" type="application/rss+xml" rel="alternate" />
+<link rel="icon" type="image/png" href="http://hunaner.top:8080/favicon.png" />
+
+    </head>
+    <body>
+<header>
+    <div class="banner">
+        <div class="fn-clear wrapper">
+            <h1 class="fn-inline">
+                <a href="http://hunaner.top:8080" rel="start">
+                    James的实验台
+                </a>
+            </h1>
+            <small> &nbsp; 实验台</small>
+            <div class="fn-right">
+                    <a href="/login?goto=http%3A%2F%2Fhunaner.top%3A8080%2Fadmin-index.do%23main">
+                        <i class="icon-login"></i> 登录
+                    </a>
+                    <a href="http://hunaner.top:8080/register">
+                        <i class="icon-register"></i> 注册
+                    </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <div class="fn-clear wrapper">
+            <nav class="fn-left">
+                <a href="http://hunaner.top:8080">
+                    <i class="icon-home"></i>
+                    首页
+                </a>
+                <a href="http://hunaner.top:8080/dynamic.html" rel="section">
+                    <i class="icon-refresh"></i> 动态
+                </a>
+                <a href="http://hunaner.top:8080/tags.html" rel="section">
+                    <i class="icon-tags"></i> 标签墙
+                </a>
+                <a href="http://hunaner.top:8080/archives.html">
+                    <i class="icon-inbox"></i> 存档
+                </a>
+                <a rel="archive" href="http://hunaner.top:8080/links.html">
+                    <i class="icon-link"></i> 友情链接
+                </a>
+                <a rel="alternate" href="http://hunaner.top:8080/blog-articles-rss.do" rel="section">
+                    <i class="icon-rss"></i> RSS
+                </a>
+            </nav>
+            <div class="fn-right">
+                <form class="form" target="_blank" action="http://zhannei.baidu.com/cse/site">
+                    <input placeholder="搜索" id="search" type="text" name="q"/>
+                    <button type="submit"><i class="icon-search"></i></button>
+                    <input type="hidden" name="cc" value="hunaner.top">
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="responsive fn-none">
+    <i class="icon-list"></i>
+    <ul class="list">
+                <li>
+                    <a href="/login?goto=http%3A%2F%2Fhunaner.top%3A8080%2Fadmin-index.do%23main">
+                        <i class="icon-login"></i> 登录
+                    </a>
+                </li>
+                <li>
+                    <a href="http://hunaner.top:8080/register">
+                        <i class="icon-register"></i> 注册
+                    </a>
+                </li>
+        <li>
+            <a href="http://hunaner.top:8080">
+                <i class="icon-home"></i>
+                首页
+            </a>
+        </li>
+        <li>
+            <a href="http://hunaner.top:8080/dynamic.html" rel="section">
+                <i class="icon-refresh"></i> 动态
+            </a>
+        </li>
+        <li>
+            <a href="http://hunaner.top:8080/tags.html" rel="section">
+                <i class="icon-tags"></i> 标签墙
+            </a>
+        </li>
+        <li>
+            <a href="http://hunaner.top:8080/archives.html">
+                <i class="icon-inbox"></i> 存档
+            </a>
+        </li>
+        <li>
+            <a rel="archive" href="http://hunaner.top:8080/links.html">
+                <i class="icon-link"></i> 友情链接
+            </a>
+        </li>
+        <li>
+            <a rel="alternate" href="http://hunaner.top:8080/blog-articles-rss.do" rel="section">
+                <i class="icon-rss"></i> RSS
+            </a>
+        </li>
+    </ul>
+</div>        <div class="wrapper">
+            <div class="main-wrap">
+                <main>
+<div>
+        <article class="post">
+        <header>
+            <h1>
+                <a rel="bookmark" href="http://hunaner.top:8080/articles/2018/01/03/1515032472458.html">
+                    设计模式--工厂方法模式（Factory method pattern）及应用
+                </a>
+            </h1>
+
+            <div class="meta">
+                <span class="tooltipped tooltipped-n" aria-label="创建日期">
+                    <i class="icon-date"></i>
+                    <time>
+                        2018-01-04
+                    </time>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="评论数">
+                    <i class="icon-comments"></i>
+                    <a href="http://hunaner.top:8080/articles/2018/01/03/1515032472458.html#comments">
+                        0 评论</a>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="浏览数">
+                    <i class="icon-views"></i>
+                    2 浏览
+                </span>
+            </div>
+        </header>
+        <div class="content-reset">
+            <p>关于设计模式</p>
+
+        </div>
+        <footer class="fn-clear tags">
+                <a class="tag" rel="tag" href="http://hunaner.top:8080/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">
+                    设计模式</a>
+            <a href="http://hunaner.top:8080/articles/2018/01/03/1515032472458.html#more" rel="contents" class="fn-right">
+                阅读全文 &raquo;
+            </a>
+        </footer>
+    </article>
+    <article class="post">
+        <header>
+            <h1>
+                <a rel="bookmark" href="http://hunaner.top:8080/articles/2018/01/03/1515032435343.html">
+                    设计模式--单例模式（Singleton pattern）及应用
+                </a>
+            </h1>
+
+            <div class="meta">
+                <span class="tooltipped tooltipped-n" aria-label="创建日期">
+                    <i class="icon-date"></i>
+                    <time>
+                        2018-01-04
+                    </time>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="评论数">
+                    <i class="icon-comments"></i>
+                    <a href="http://hunaner.top:8080/articles/2018/01/03/1515032435343.html#comments">
+                        0 评论</a>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="浏览数">
+                    <i class="icon-views"></i>
+                    2 浏览
+                </span>
+            </div>
+        </header>
+        <div class="content-reset">
+            <p>关于设计模式</p>
+
+        </div>
+        <footer class="fn-clear tags">
+                <a class="tag" rel="tag" href="http://hunaner.top:8080/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">
+                    设计模式</a>
+            <a href="http://hunaner.top:8080/articles/2018/01/03/1515032435343.html#more" rel="contents" class="fn-right">
+                阅读全文 &raquo;
+            </a>
+        </footer>
+    </article>
+    <article class="post">
+        <header>
+            <h1>
+                <a rel="bookmark" href="http://hunaner.top:8080/articles/2018/01/03/1515032375029.html">
+                    设计模式--建造者模式（ Builder Pattern）
+                </a>
+            </h1>
+
+            <div class="meta">
+                <span class="tooltipped tooltipped-n" aria-label="创建日期">
+                    <i class="icon-date"></i>
+                    <time>
+                        2018-01-04
+                    </time>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="评论数">
+                    <i class="icon-comments"></i>
+                    <a href="http://hunaner.top:8080/articles/2018/01/03/1515032375029.html#comments">
+                        0 评论</a>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="浏览数">
+                    <i class="icon-views"></i>
+                    0 浏览
+                </span>
+            </div>
+        </header>
+        <div class="content-reset">
+            <p>关于设计模式</p>
+
+        </div>
+        <footer class="fn-clear tags">
+                <a class="tag" rel="tag" href="http://hunaner.top:8080/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">
+                    设计模式</a>
+            <a href="http://hunaner.top:8080/articles/2018/01/03/1515032375029.html#more" rel="contents" class="fn-right">
+                阅读全文 &raquo;
+            </a>
+        </footer>
+    </article>
+    <article class="post">
+        <header>
+            <h1>
+                <a rel="bookmark" href="http://hunaner.top:8080/articles/2018/01/03/1515032242947.html">
+                    设计模式--原型模式（ Prototype Pattern）
+                </a>
+            </h1>
+
+            <div class="meta">
+                <span class="tooltipped tooltipped-n" aria-label="创建日期">
+                    <i class="icon-date"></i>
+                    <time>
+                        2018-01-04
+                    </time>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="评论数">
+                    <i class="icon-comments"></i>
+                    <a href="http://hunaner.top:8080/articles/2018/01/03/1515032242947.html#comments">
+                        0 评论</a>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="浏览数">
+                    <i class="icon-views"></i>
+                    1 浏览
+                </span>
+            </div>
+        </header>
+        <div class="content-reset">
+            <p>关于设计模式</p>
+
+        </div>
+        <footer class="fn-clear tags">
+                <a class="tag" rel="tag" href="http://hunaner.top:8080/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">
+                    设计模式</a>
+            <a href="http://hunaner.top:8080/articles/2018/01/03/1515032242947.html#more" rel="contents" class="fn-right">
+                阅读全文 &raquo;
+            </a>
+        </footer>
+    </article>
+    <article class="post">
+        <header>
+            <h1>
+                <a rel="bookmark" href="http://hunaner.top:8080/articles/2017/12/20/1513762109044.html">
+                    Jfinal 初次尝试及 Jetty 使用相关问题
+                </a>
+                <sup>
+                    有更新！
+                </sup>
+            </h1>
+
+            <div class="meta">
+                <span class="tooltipped tooltipped-n" aria-label="创建日期">
+                    <i class="icon-date"></i>
+                    <time>
+                        2017-12-20
+                    </time>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="评论数">
+                    <i class="icon-comments"></i>
+                    <a href="http://hunaner.top:8080/articles/2017/12/20/1513762109044.html#comments">
+                        0 评论</a>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="浏览数">
+                    <i class="icon-views"></i>
+                    58 浏览
+                </span>
+            </div>
+        </header>
+        <div class="content-reset">
+            <p>Jfinal 初次尝试及 Jetty 使用相关问题</p>
+
+        </div>
+        <footer class="fn-clear tags">
+                <a class="tag" rel="tag" href="http://hunaner.top:8080/tags/JFinal">
+                    JFinal</a>
+                <a class="tag" rel="tag" href="http://hunaner.top:8080/tags/B3log">
+                    B3log</a>
+                <a class="tag" rel="tag" href="http://hunaner.top:8080/tags/Jetty">
+                    Jetty</a>
+            <a href="http://hunaner.top:8080/articles/2017/12/20/1513762109044.html#more" rel="contents" class="fn-right">
+                阅读全文 &raquo;
+            </a>
+        </footer>
+    </article>
+    <article class="post">
+        <header>
+            <h1>
+                <a rel="bookmark" href="http://hunaner.top:8080/articles/2017/12/19/1513694371987.html">
+                    JVM命令行参数解析
+                </a>
+            </h1>
+
+            <div class="meta">
+                <span class="tooltipped tooltipped-n" aria-label="创建日期">
+                    <i class="icon-date"></i>
+                    <time>
+                        2017-12-19
+                    </time>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="评论数">
+                    <i class="icon-comments"></i>
+                    <a href="http://hunaner.top:8080/articles/2017/12/19/1513694371987.html#comments">
+                        0 评论</a>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="浏览数">
+                    <i class="icon-views"></i>
+                    32 浏览
+                </span>
+            </div>
+        </header>
+        <div class="content-reset">
+            <p>看一个java命令行的参数实例</p>
+
+        </div>
+        <footer class="fn-clear tags">
+                <a class="tag" rel="tag" href="http://hunaner.top:8080/tags/JVM">
+                    JVM</a>
+            <a href="http://hunaner.top:8080/articles/2017/12/19/1513694371987.html#more" rel="contents" class="fn-right">
+                阅读全文 &raquo;
+            </a>
+        </footer>
+    </article>
+    <article class="post">
+        <header>
+            <h1>
+                <a rel="bookmark" href="http://hunaner.top:8080/articles/2017/11/30/1512039235428.html">
+                    Java 基础之 IO 和 NIO 补完
+                </a>
+                <sup>
+                    有更新！
+                </sup>
+            </h1>
+
+            <div class="meta">
+                <span class="tooltipped tooltipped-n" aria-label="创建日期">
+                    <i class="icon-date"></i>
+                    <time>
+                        2017-11-30
+                    </time>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="评论数">
+                    <i class="icon-comments"></i>
+                    <a href="http://hunaner.top:8080/articles/2017/11/30/1512039235428.html#comments">
+                        1 评论</a>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="浏览数">
+                    <i class="icon-views"></i>
+                    83 浏览
+                </span>
+            </div>
+        </header>
+        <div class="content-reset">
+            <p>由于参考系列教程只翻译到了13，后面的也挺简单的。主要是代码。记录在这里。</p>
+
+        </div>
+        <footer class="fn-clear tags">
+                <a class="tag" rel="tag" href="http://hunaner.top:8080/tags/Java">
+                    Java</a>
+                <a class="tag" rel="tag" href="http://hunaner.top:8080/tags/B3log">
+                    B3log</a>
+            <a href="http://hunaner.top:8080/articles/2017/11/30/1512039235428.html#more" rel="contents" class="fn-right">
+                阅读全文 &raquo;
+            </a>
+        </footer>
+    </article>
+    <article class="post">
+        <header>
+            <h1>
+                <a rel="bookmark" href="http://hunaner.top:8080/articles/2017/10/09/1507562773527.html">
+                    运维--网站配置HTTPS
+                </a>
+                <sup>
+                    有更新！
+                </sup>
+            </h1>
+
+            <div class="meta">
+                <span class="tooltipped tooltipped-n" aria-label="创建日期">
+                    <i class="icon-date"></i>
+                    <time>
+                        2017-10-09
+                    </time>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="评论数">
+                    <i class="icon-comments"></i>
+                    <a href="http://hunaner.top:8080/articles/2017/10/09/1507562773527.html#comments">
+                        0 评论</a>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="浏览数">
+                    <i class="icon-views"></i>
+                    226 浏览
+                </span>
+            </div>
+        </header>
+        <div class="content-reset">
+            <p>给网站配置https</p>
+
+        </div>
+        <footer class="fn-clear tags">
+                <a class="tag" rel="tag" href="http://hunaner.top:8080/tags/https">
+                    https</a>
+            <a href="http://hunaner.top:8080/articles/2017/10/09/1507562773527.html#more" rel="contents" class="fn-right">
+                阅读全文 &raquo;
+            </a>
+        </footer>
+    </article>
+    <article class="post">
+        <header>
+            <h1>
+                <a rel="bookmark" href="http://hunaner.top:8080/hello-solo">
+                    世界，你好！
+                </a>
+            </h1>
+
+            <div class="meta">
+                <span class="tooltipped tooltipped-n" aria-label="创建日期">
+                    <i class="icon-date"></i>
+                    <time>
+                        2017-10-09
+                    </time>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="评论数">
+                    <i class="icon-comments"></i>
+                    <a href="http://hunaner.top:8080/hello-solo#comments">
+                        2 评论</a>
+                </span>
+                &nbsp; | &nbsp;
+                <span class="tooltipped tooltipped-n" aria-label="浏览数">
+                    <i class="icon-views"></i>
+                    5 浏览
+                </span>
+            </div>
+        </header>
+        <div class="content-reset">
+            <p>欢迎使用 <a href="https://github.com/b3log/solo">Solo</a> 博客系统。这是系统自动生成的演示文章，编辑或者删除它，然后开始你的独立博客之旅！</p>
+<p>另外，欢迎你加入<a href="https://hacpai.com">黑客与画家的社区</a>，你可以使用博客账号直接登录！</p>
+<hr />
+<p>Solo 博客系统是一个开源项目，如果你觉得它很赞，请到<a href="https://github.com/b3log/solo">项目首页</a>给颗星鼓励一下 <img align="absmiddle" alt=":heart:" class="emoji" src="http://hunaner.top:8080/js/lib/emojify.js-1.1.0/images/basic/heart.png" title=":heart:" width="20px" height="20px"></img></p>
+
+        </div>
+        <footer class="fn-clear tags">
+                <a class="tag" rel="tag" href="http://hunaner.top:8080/tags/Solo">
+                    Solo</a>
+            <a href="http://hunaner.top:8080/hello-solo#more" rel="contents" class="fn-right">
+                阅读全文 &raquo;
+            </a>
+        </footer>
+    </article>
+
+
+        <div class="fn-clear">
+            <nav class="pagination fn-right">
+                <span class="page-number current">1</span>
+                            </nav>
+        </div>
+</div>                </main>
+<aside>
+    <section>
+                    <div class="ad content-reset">
+                开始做准备吧
+            </div>
+
+
+            <div class="module">
+                <header><h2>标签</h2></header>
+                <main>
+                        <a rel="tag"
+                           href="http://hunaner.top:8080/tags/B3log"
+                           class="tag tooltipped tooltipped-n"
+                           aria-label="2 篇文章">
+                                B3log</a>
+                        <a rel="tag"
+                           href="http://hunaner.top:8080/tags/https"
+                           class="tag tooltipped tooltipped-n"
+                           aria-label="1 篇文章">
+                                https</a>
+                        <a rel="tag"
+                           href="http://hunaner.top:8080/tags/Java"
+                           class="tag tooltipped tooltipped-n"
+                           aria-label="1 篇文章">
+                                Java</a>
+                        <a rel="tag"
+                           href="http://hunaner.top:8080/tags/Jetty"
+                           class="tag tooltipped tooltipped-n"
+                           aria-label="1 篇文章">
+                                Jetty</a>
+                        <a rel="tag"
+                           href="http://hunaner.top:8080/tags/JFinal"
+                           class="tag tooltipped tooltipped-n"
+                           aria-label="1 篇文章">
+                                JFinal</a>
+                        <a rel="tag"
+                           href="http://hunaner.top:8080/tags/JVM"
+                           class="tag tooltipped tooltipped-n"
+                           aria-label="1 篇文章">
+                                JVM</a>
+                        <a rel="tag"
+                           href="http://hunaner.top:8080/tags/Solo"
+                           class="tag tooltipped tooltipped-n"
+                           aria-label="1 篇文章">
+                                Solo</a>
+                        <a rel="tag"
+                           href="http://hunaner.top:8080/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"
+                           class="tag tooltipped tooltipped-n"
+                           aria-label="4 篇文章">
+                                设计模式</a>
+                </main>
+            </div>
+
+        <div class="module meta">
+            <header>
+                <h2>james</h2>
+            </header>
+            <main class="fn-clear">
+                <img src="https://secure.gravatar.com/avatar/96a1fa780ebc488efe4e6a7ac6d0f273?s=128" aria-label="james"/>
+                <div class="fn-right">
+                    <a href="http://hunaner.top:8080/archives.html">
+                        9
+                        <span class="ft-gray">文章</span></a><br/>
+                    <a href="http://hunaner.top:8080/dynamic.html">
+                        3
+                        <span class="ft-gray">评论</span></a><br/>
+                    2,394 <span class="ft-gray">浏览</span><br/>
+                    3 <span class="ft-gray">访客</span>
+                </div>
+            </main>
+        </div>
+
+            <div class="module">
+                <header><h2>评论最多的文章</h2></header>
+                <main class="list">
+                    <ul>
+                            <li>
+                                <a rel="nofollow" aria-label="2 评论"
+                                   class="tooltipped tooltipped-e"
+                                   href="http://hunaner.top:8080/hello-solo">
+                                    世界，你好！
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" aria-label="1 评论"
+                                   class="tooltipped tooltipped-e"
+                                   href="http://hunaner.top:8080/articles/2017/11/30/1512039235428.html">
+                                    Java 基础之 IO 和 NIO 补完
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" aria-label="0 评论"
+                                   class="tooltipped tooltipped-e"
+                                   href="http://hunaner.top:8080/articles/2018/01/03/1515032472458.html">
+                                    设计模式--工厂方法模式（Factory method pattern）及应用
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" aria-label="0 评论"
+                                   class="tooltipped tooltipped-e"
+                                   href="http://hunaner.top:8080/articles/2018/01/03/1515032435343.html">
+                                    设计模式--单例模式（Singleton pattern）及应用
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" aria-label="0 评论"
+                                   class="tooltipped tooltipped-e"
+                                   href="http://hunaner.top:8080/articles/2018/01/03/1515032375029.html">
+                                    设计模式--建造者模式（ Builder Pattern）
+                                </a>
+                            </li>
+                    </ul>
+                </main>
+            </div>
+
+            <div class="module">
+                <header><h2>访问最多的文章</h2></header>
+                <main class="list">
+                    <ul>
+                            <li>
+                                <a rel="nofollow" aria-label="0 评论"
+                                   class="tooltipped tooltipped-e"
+                                   href="http://hunaner.top:8080/articles/2017/10/09/1507562773527.html">
+                                    运维--网站配置HTTPS
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" aria-label="1 评论"
+                                   class="tooltipped tooltipped-e"
+                                   href="http://hunaner.top:8080/articles/2017/11/30/1512039235428.html">
+                                    Java 基础之 IO 和 NIO 补完
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" aria-label="0 评论"
+                                   class="tooltipped tooltipped-e"
+                                   href="http://hunaner.top:8080/articles/2017/12/20/1513762109044.html">
+                                    Jfinal 初次尝试及 Jetty 使用相关问题
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" aria-label="0 评论"
+                                   class="tooltipped tooltipped-e"
+                                   href="http://hunaner.top:8080/articles/2017/12/19/1513694371987.html">
+                                    JVM命令行参数解析
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" aria-label="2 评论"
+                                   class="tooltipped tooltipped-e"
+                                   href="http://hunaner.top:8080/hello-solo">
+                                    世界，你好！
+                                </a>
+                            </li>
+                    </ul>
+                </main>
+            </div>
+    </section>
+</aside>            </div>
+        </div>
+<footer class="footer fn-clear">
+    &copy; 2018
+    半辈子快过去了
+    <a href="http://hunaner.top:8080">James的实验台</a>  &nbsp;   • &nbsp;
+    <a href="https://hacpai.com/tag/solo" target="_blank">Solo</a> 2.2.0  <br/>
+
+    Powered by <a href="http://b3log.org" target="_blank">B3log</a> 开源 &nbsp;
+    <span class="ft-warn">&heartsuit;</span>
+    Theme by <a href="https://github.com/9IPHP/9IPHP" target="_blank">9IPHP</a> & <a href="http://vanessa.b3log.org" target="_blank">Vanessa</a>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script type="text/javascript" src="http://hunaner.top:8080/js/lib/jquery/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://hunaner.top:8080/js/common.min.js?1513847163298" charset="utf-8"></script>
+<script type="text/javascript" src="http://hunaner.top:8080/skins/9IPHP/js/common.min.js?1513847163298" charset="utf-8"></script>
+<script type="text/javascript">
+    var latkeConfig = {
+        "servePath": "http://hunaner.top:8080",
+        "staticServePath": "http://hunaner.top:8080",
+        "isLoggedIn": "false",
+        "userName": ""
+    };
+
+    var Label = {
+        "skinDirName": "9IPHP",
+        "em00Label": ":smile:",
+        "em01Label": ":joy:",
+        "em02Label": ":stuck_out_tongue_winking_eye:",
+        "em03Label": ":persevere:",
+        "em04Label": ":sob:",
+        "em05Label": ":cold_sweat:",
+        "em06Label": ":rage:",
+        "em07Label": ":triumph:",
+        "em08Label": ":eyes:",
+        "em09Label": ":scream:",
+        "em10Label": ":sunglasses:",
+        "em11Label": ":yum:",
+        "em12Label": ":heart:",
+        "em13Label": ":broken_heart:",
+        "em14Label": ":smiling_imp:"
+    };
+</script>
+<script type="text/javascript">
+    (function () {
+        var $groups =  $("a[rel=group]"),
+        $fancybox = $(".fancybox");
+        if ($groups.length > 0 || $fancybox.length > 0) {
+            if (document.createStyleSheet) {
+                document.createStyleSheet("http://hunaner.top:8080/plugins/fancybox/js/jquery.fancybox.css");
+            } else {
+                $("head").append($("<link rel='stylesheet' href='http://hunaner.top:8080/plugins/fancybox/js/jquery.fancybox.css' type='text/css' charset='utf-8' />"));
+            } 
+            
+            $.ajax({
+                url: "http://hunaner.top:8080/plugins/fancybox/js/jquery.fancybox.pack.js",
+                dataType: "script",
+                cache: true,
+                complete: function() {
+                    $groups.fancybox({
+                        openEffect  : 'none',
+                        closeEffect : 'none',
+                        prevEffect : 'none',
+                        nextEffect : 'none'
+                    });
+                    $fancybox.fancybox({
+                        openEffect  : 'none',
+                        closeEffect : 'none',
+                        prevEffect : 'none',
+                        nextEffect : 'none'
+                    });
+                }
+            });
+        }
+    })();
+</script>
+
+    </body>
+</html><!-- Generated by B3log Latke(104 ms), 2018/01/04 00:31:41 -->
