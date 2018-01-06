@@ -1,10 +1,12 @@
 package main
+
 import (
-    "uc"
-    "fmt"
+	"fmt"
+	"uc"
 )
 
 func main() {
-    str1 := "USING package uc!"
-    fmt.Println(uc.UpperCase(str1))
+	str1 := "USING package uc!"
+	fmt.Println(uc.UpperCase(str1))
+	fmt.Printf("Hello, world.  Sqrt(2) = %v\n", uc.Sqrt(2))
 }
