@@ -58,7 +58,7 @@ def schedule_run():
         now_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         sched_str = sched_time.strftime('%Y-%m-%d %H:00:00')  # schedule to next sharp hour.
         logging.info('now time:%s; next time:%s'% (now_str,sched_str))
-        s.enter(DYNAMIC_CHECK_INTERVAL,1,saveImg,())
+        s.enter(DYNAMIC_CHECK_INTERVAL,1,1,saveImg())
         s.run()
         logging.info('Get images round %d end.' % (count + 1))
         count +=1
