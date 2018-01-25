@@ -1,18 +1,18 @@
 package main
 
 import (
-    "github.com/astaxie/beego"
+	"github.com/astaxie/beego"
 )
 
 type MainController struct {
-    beego.Controller
+	beego.Controller
 }
 
 func (this *MainController) Get() {
-    this.Ctx.WriteString("hello world")
+	this.Ctx.WriteString("hello world")
 }
 
 func main() {
-    beego.Router("/", &MainController{})
-    beego.Run()
+	beego.Router("/", &MainController{})
+	beego.Run()
 }

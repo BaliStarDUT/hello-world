@@ -20,4 +20,16 @@ func main() {
 		log.Fatalf("Can't get hostname: %s", hostname)
 	}
 	log.Infof("Host name: %s", hostname)
+	log.Error("error")
+	log.Fatal("fatal")
+	log.Warning("warning")
+	log.V(1).Info("v1 info")
+	log.V(2).Info("v2 info")
+	log.V(3).Info("v3 info")
+	log.V(4).Info("v4 info")
+	log.V(5).Info("v5 info")
+	if log.V(2) {
+		log.Info("Starting transaction...")
+	}
+	log.Flush()
 }
