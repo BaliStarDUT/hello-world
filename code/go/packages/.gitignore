@@ -1,0 +1,7 @@
+bin
+pkg
+ucmain.go
+src/github.com
+src/gopkg.in
+src/mathapp
+src/uc
