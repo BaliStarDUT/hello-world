@@ -16,6 +16,6 @@ func main() {
 
 	glog.V(1).Infoln("level 1") // 3
 	glog.V(2).Infoln("level 2")
-
+	// glog.Fatalln("This is a Fatal log")
 	glog.Flush() // 4
 }

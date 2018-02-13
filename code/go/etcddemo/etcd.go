@@ -2,23 +2,24 @@ package etcddemo
 
 import (
 	"ac/registry/etcdclient/etcd"
-	"fmt"
 	"log"
 )
 
 func runetcd(client etcd.Client) {
-	fmt.Println("-------------", client)
 	result, err := client.Set("/foo", "bar", 0)
-
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("set err:%v", err)
 	}
-	log.Println(result)
 	result, err = client.Get("/foo", false, false)
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Println(result)
+	log.Println(result.Node.Value)
+	// result, err = client.Get("/registry/services", false, false)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// log.Println(result)
 }
 func watch(client etcd.Client) {
 	receiver := make(chan *etcd.Response)

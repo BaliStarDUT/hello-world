@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"runtime"
 	"time"
 )
@@ -19,24 +20,26 @@ func main() {
 	go pump1(ch1)
 	go pump2(ch2)
 	go suck(ch1, ch2)
-
+	// for{
+	// }
 	time.Sleep(1e9)
 }
 
 func pump1(ch chan int) {
-	for i := 0; ; i++ {
+	for i := 0; i < 100; i++ {
 		ch <- i * 2
 	}
 }
 
 func pump2(ch chan int) {
-	for i := 0; ; i++ {
+	for i := 0; i < 100; i++ {
 		ch <- i + 5
 	}
 }
 
 func suck(ch1, ch2 chan int) {
-	for i := 0; ; i++ {
+	for i := 0; i < 201; i++ {
+		log.Println(i)
 		select {
 		case v := <-ch1:
 			fmt.Printf("%d - Received on channel 1: %d\n", i, v)

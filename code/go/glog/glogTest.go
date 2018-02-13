@@ -21,7 +21,7 @@ func main() {
 	}
 	log.Infof("Host name: %s", hostname)
 	log.Error("error")
-	log.Fatal("fatal")
+	// log.Fatal("fatal")
 	log.Warning("warning")
 	log.V(1).Info("v1 info")
 	log.V(2).Info("v2 info")
