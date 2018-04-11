@@ -5,11 +5,19 @@
 
 <hibernate-mapping package="hibernate">
 
-	<class name="Lolhero" table="lolhero1">
+	<class name="Lolhero" table="heros">
 		<id name="id">
 			<generator class="native"></generator>
 		</id>
-		<property name="name"></property>
+		<property name="nickname" type="string" not-null="true" column="nickname"></property>
+    <property name="nameEn" type="string" not-null="true" column="name_en"></property>
+    <property name="nameCn" type="string" not-null="true" column="name_cn"></property>
+    <property name="headpicUrl" type="string" not-null="true" column="headpic_url"></property>
+    <property name="soundsUrl" type="string" not-null="true" column="sounds_url"></property>
+    <property name="story" type="string" not-null="true" column="story"></property>
+    <property name="type" type="string" not-null="true" column="type"></property>
+    <!-- <property name="nickname" type="string" not-null="true" column="nickname"></property>
+    <property name="nickname" type="string" not-null="true" column="nickname"></property> -->
 
 		<!-- department属性，Department类型，表示Employee与Department的多对一 -->
 		<!-- <many-to-one name="department" column="departmentId" class="Department"></many-to-one> -->

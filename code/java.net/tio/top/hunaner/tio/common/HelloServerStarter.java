@@ -23,5 +23,5 @@ public class HelloServerStarter {
 	public static void main(String[] args) throws IOException {
 		serverGroupContext.setHeartbeatTimeout(Const.TIMEOUT);
 		aioServer.start(serverIp, serverPort);
-    }
+  }
 }

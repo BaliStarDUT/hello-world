@@ -6,9 +6,12 @@
 	<session-factory>
 		<!-- 一、数据库信息：数据库方言（是一个类的全名）与数据库连接信息 -->
 		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
-		<property name="connection.url">jdbc:mysql://192.168.99.101:3306/opencron</property>
-		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.username">root</property>
+		<!-- <property name="connection.url">jdbc:mysql://192.168.99.101:3306/opencron</property> -->
+		<property name="connection.url">jdbc:h2:/Users/air/Documents/GitHub/DX3907/dx3907.mv.db</property>
+		<property name="connection.driver_class">org.h2.Driver</property>
+		<!-- <property name="connection.driver_class">com.mysql.jdbc.Driver</property> -->
+
+		<property name="connection.username">sa</property>
 		<!-- <property name="connection.password">r</property> -->
 
 		<!-- 二、其他配置 -->

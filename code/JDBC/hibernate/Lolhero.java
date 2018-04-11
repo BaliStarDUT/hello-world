@@ -9,7 +9,7 @@ import java.io.Serializable;
  *
  */
 @Entity
-@Table(name="lolheros")
+@Table(name="heros")
 public class Lolhero implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -147,7 +147,7 @@ public class Lolhero implements Serializable {
 	@Override
 	public String toString(){
 		return "Lolhero{"+
-				nameCn+"}";
+				nameCn+"-"+nameEn+"-"+nickname+"-"+story+"-"+headpicUrl+"-"+soundsUrl+"}";
 	}
 
 }

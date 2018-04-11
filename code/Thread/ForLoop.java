@@ -1,11 +1,18 @@
-//Demonstrate HttpURLConnection
+
 import java.net.*;
 import java.io.*;
 import java.util.*;
-class HttpURLConnectionDemo{
-	public static void main(String[] args){
-		try{
-			URL url=new URL("http://www.baidu.com");
+
+class ForLoop {
+  public static void main(String []args){
+    for (int i=0;;i++){
+      System.out.println(System.nanoTime()+"--"+i);
+      httpRequest();
+    }
+  }
+  private static void httpRequest(){
+    try{
+			URL url=new URL("http://localhost:5897");
 			HttpURLConnection connection=(HttpURLConnection)url.openConnection();
 
 			//display request method

@@ -1,12 +1,16 @@
 import java.util.Date;
 import org.apache.log4j.Logger;
+import java.util.concurrent.CountDownLatch;
 
+
+//java -classpath .:/Users/aliyun/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar Log4jTest
 class Log4jTest{
 	public static void main(String[] args) {
-		test();
+		log4jTest();
   }
-	public void log4jTest(){
+	public static void log4jTest(){
 		Logger logger = Logger.getLogger(Log4jTest.class);
+		logger.info("user.dir"+System.getProperty("user.dir"));
 		logger.info("hello {}");
     logger.debug("hello {}");
     logger.error("hello {}");
@@ -15,6 +19,7 @@ class Log4jTest{
 	}
 
 	public void testThread() throws InterruptedException {
+		Logger logger = Logger.getLogger(Log4jTest.class);
       int THREAD_NUM = 100;
       final int LOOP_NUM = 100000;
 
@@ -35,6 +40,7 @@ class Log4jTest{
   }
 
 	public void test() throws InterruptedException {
+		Logger logger = Logger.getLogger(Log4jTest.class);
         int X_NUM = 100;
         int Y_NUM = 100000;
 

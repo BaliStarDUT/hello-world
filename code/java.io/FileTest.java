@@ -18,8 +18,8 @@ class FileTest{
 		Logger logger = LoggerFactory.getLogger(FileTest.class);
 		logger.info("hello {}",new Date());
 		//构造函数
-		File file = new File("/Users/aliyun/Desktop/截图");
-		System.out.println("This file "+"/Users/aliyun/Desktop/截图"+"exists?:"+file.exists());
+		File file = new File("/Users/air/Pictures/lol/image_champions/");
+		System.out.println("This file "+"/Users/air/Pictures/lol/image_champions/"+"exists?:"+file.exists());
 		if(!file.exists()){
 			file.mkdir(); //file.mkdirs() 生成多级目录
 		}else{
@@ -35,7 +35,7 @@ class FileTest{
 		System.out.println(file.getAbsolutePath());
 		System.out.println(file.getName());
 		System.out.println(file.getParent());
-		FileTest.listDirectory(new File("/Users/aliyun/Desktop/截图"));
+		FileTest.listDirectory(new File("/Users/air/Pictures/lol/image_champions/"));
 	}
 	//列出指定目录（包括其子目录）下所有文件
 	public static List<String> listDirectory(File dir) throws IOException{
@@ -46,11 +46,11 @@ class FileTest{
 			throw new IllegalArgumentException(dir+" is now a directory!");
 		}
 		List<String> fileList = new ArrayList<String>();
-		//System.out.println(dir.list());
-		// String[] filenames = dir.list();
-		// for(String string:filenames){
-		// 	System.out.println(dir+"/"+string);
-		// }
+		System.out.println(dir.list());
+		String[] filenames = dir.list();
+		for(String string:filenames){
+			System.out.println(dir+"/"+string);
+		}
 		//返回直接子目录的File对象
 		File[] files = dir.listFiles();
 		if(files!=null && files.length>0){

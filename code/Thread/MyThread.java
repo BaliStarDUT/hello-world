@@ -5,8 +5,8 @@ class MyThread implements Runnable{
 	MyThread(String name){
 		thrd=new Thread(this,name);
 		thrd.start();
-	}	
-	//Entry point of thread 
+	}
+	//Entry point of thread
 	public void run(){
 		System.out.println(thrd.getName()+" starting.");
 		try{

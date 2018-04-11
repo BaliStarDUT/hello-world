@@ -7,6 +7,7 @@ import (
 )
 
 // ./glog2   -v 2 -log_dir ./log -stderrthreshold INFO
+// go run scheduler.go -log_dir ./log -stderrthreshold INFO -alsologtostderr -filethreshold info
 func main() {
 	flag.Parse() // 1
 
