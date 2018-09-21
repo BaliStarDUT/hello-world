@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: precess-item-1
+  lables:
+    jobgroup: cronjob
+spec:
+  template:
+    metadata:
+      name: cronjob
+      lables:
+        jobgroup: cronjob
+    spec:
+      containers:
+      - name: cronjob
+        image: 192.168.26.46/library/busybox:latest
+        command: ["sh",  "-c", "date && echo Processing item 1... && sleep 5 && date "]
+      restartPolicy: Never
+  backoffLimit: 4
