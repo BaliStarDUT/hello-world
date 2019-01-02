@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  labels:
+    k8s-app: nginx
+  name: nginx
+  namespace: ingress-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: nginx
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        k8s-app: nginx
+      name: nginx
+    spec:
+      containers:
+      - image: vmware/nginx-photon:v1.5.3
+        imagePullPolicy: IfNotPresent
+        name: nginx
+        resources: {}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always

@@ -1,0 +1,48 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: mysql
+  name: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      restartPolicy: Always
+      containers:
+      - image: 192.168.26.46/library/mysql:5.7.21
+        name: mysql
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-user-pwd
+              key: mysql-root-pwd
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-user-pwd
+              key: mysql-app-user-pwd
+        - name: MYSQL_USER
+          value: app
+        - name: MYSQL_DATABASE
+          value: k8s_project
+        volumeMounts:
+        - name: mysql-data
+          mountPath: /var/lib/mysql
+        - name: mysql-config
+          mountPath: /etc/mysql/conf.d/
+      volumes:
+      - name: mysql-data
+        hostPath:
+          path: /home/yang/data/mysql
+      - name: mysql-config
+        configMap:
+          name: mysql-config

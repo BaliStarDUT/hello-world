@@ -1,0 +1,15 @@
+[{
+	"targets": ["172.18.0.7:9090"],
+	"labels": {
+		"env": "dev",
+		"job": "prometheus2",
+		"instance": "172.18.0.7_prometheus2_server"
+	}
+}, {
+	"targets": ["172.18.0.6:9090"],
+	"labels": {
+		"env": "dev",
+		"job": "prometheus1",
+		"instance": "172.18.0.6_prometheus1_server"
+	}
+}]

@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: busybox-client
+  namespace: default
+  labels:
+    tools : busybox
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    command: ["/sbin/init"]

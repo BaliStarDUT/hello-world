@@ -1,0 +1,9 @@
+{
+	"name": "mynet",
+	"type": "win-bridge",
+	"ipMasqNetwork": "10.244.0.0/16",
+	"ipam": {
+		"type": "host-local",
+		"subnet": "10.10.0.0/16"
+	}
+}

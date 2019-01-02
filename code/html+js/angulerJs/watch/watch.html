@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .ng-cloak{display:none;}
+    </style>
+</head>
+<body ng-app="app" ng-controller="ctrl" ng-cloak class="ng-cloak">
+    <input type="text" ng-model="data1" />{{error1}}
+    <input type="text" ng-model="data2.title">{{error2}}
+</body>
+</html>
+<script type="text/javascript" src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script type="text/javascript">
+    var m = angular.module('app', []);
+    m.controller('ctrl', ['$scope', function($scope){
+        $scope.data1 = 'zym';
+        $scope.$watch('data1', function(n, o){
+            console.log(n);
+            $scope.error1 = n.length>3 ? '最多3个字' : '';
+
+
+        $scope.data2 = {'title':'zym'};
+        $scope.$watch('data2', function(n, o){
+            console.log(n);
+            $scope.error2 = n.title.length>3 ? '最多三个字' : '';
+        }, true);
+    }]);
+</script>
