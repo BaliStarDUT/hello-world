@@ -35,9 +35,9 @@ public class Country {
  public boolean equals(Object obj) {
 
   Country other = (Country) obj;
-   if (name.equalsIgnoreCase((other.name)))
+   // if (name.equalsIgnoreCase((other.name)))
    return true;
-  return false;
+  // return false;
  }
 
 }

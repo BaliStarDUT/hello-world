@@ -1,5 +1,7 @@
+package map;
 import java.util.HashMap;
 import java.util.Iterator;
+import map.Country;
 
 public class HashMapTest {
 
@@ -19,6 +21,10 @@ public class HashMapTest {
         countryCapitalMap.put(japan,"Tokyo");
         countryCapitalMap.put(france,"Paris");
         countryCapitalMap.put(russia,"Moscow");
+        System.out.println(countryCapitalMap);
+        System.out.println(countryCapitalMap.size());
+        System.out.println(countryCapitalMap.get(3));
+        System.out.println(countryCapitalMap.get(5));
 
         Iterator<Country> countryCapitalIter=countryCapitalMap.keySet().iterator();//put debug point at this line
         while(countryCapitalIter.hasNext())

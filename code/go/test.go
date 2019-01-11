@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 type Books struct {
@@ -15,9 +14,9 @@ type Books struct {
 func printBook(book Books) {
 	fmt.Printf("Book title : %s\n", book.title)
 	fmt.Printf("Book author : %s\n", book.author)
-	timeInterval := time.Duration(60) * time.Second
+	// timeInterval := time.Duration(60) * time.Second
 	// timeSpan := time.Since(startAt)
-	time.Sleep(timeInterval)
+	// time.Sleep(timeInterval)
 	fmt.Printf("Book subject : %s\n", book.subject)
 	fmt.Printf("Book book_id : %d\n", book.book_id)
 }

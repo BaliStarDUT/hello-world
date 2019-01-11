@@ -12,10 +12,10 @@ class Log4jTest{
 		Logger logger = Logger.getLogger(Log4jTest.class);
 		logger.info("user.dir"+System.getProperty("user.dir"));
 		logger.info("hello {}");
-    logger.debug("hello {}");
-    logger.error("hello {}");
-    logger.trace("hello {}");
-    logger.warn("hello {}");
+	    logger.debug("hello {}");
+	    logger.error("hello {}");
+	    logger.trace("hello {}");
+	    logger.warn("hello {}");
 	}
 
 	public void testThread() throws InterruptedException {

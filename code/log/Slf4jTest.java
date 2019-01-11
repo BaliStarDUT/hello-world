@@ -4,16 +4,35 @@
 */
 
 import java.util.Date;
+import java.util.Map;
+import java.util.HashMap;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 class Slf4jTest{
+    private static final Logger logger = LoggerFactory.getLogger(Slf4jTest.class);
+
 	public static void main(String[] args) {
-		Logger logger = LoggerFactory.getLogger(Slf4jTest.class);
+		try{
+            // Double d1=new Double(1/0);
+            Class classa = Class.forName("com.james.springboot.ClassA");
+            // ClassA classA = (ClassA) classa.newInstance();
+            // System.out.println(classA.add(2,4));
+            // throw new Exception("error");
+        }catch (ArithmeticException e){
+			logger.error("main:",e);
+			// logger.error(e.getMessage());
+            // e.printStackTrace();
+        }catch (Exception e){
+			logger.error("main:",e);
+            // e.printStackTrace();
+        }
+		logger.trace("hello {}",new Date());
 		logger.info("hello {}",new Date());
-    logger.debug("hello {}",new Date());
-    logger.error("hello {}",new Date());
-    logger.trace("hello {}",new Date());
-    logger.warn("hello {}",new Date());
+	    logger.debug("hello {}",new Date());
+	    logger.error("hello {}",new Date());
+	    logger.trace("hello {}",new Date());
+	    logger.warn("hello {}",new Date());
   }
 }
