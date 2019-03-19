@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+　　<title>perfect-scrollbar</title>
+　　<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+　　<link href="https://cdn.bootcss.com/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.css" rel="stylesheet">
+　　<style>
+　　　　#Demo {position:relative;margin:0px auto;padding:0px;width:600px;height:400px;overflow:hidden;}
+　　　　#Demo .content {background:#666;width:1280px;height:720px;padding:10px;color:#fff}
+　　</style>
+</head>
+<body>
+　　<div id='Demo'>
+　　　　<div class='content'>
+　　　　　　<p>
+    　　　　　　不需要修改任何的元素的css
+   　　　　　　 滚动条不影响最初的页面布局设计
+    　　　　　　滚动条支持完整的自定义
+    　　　　　　滚动条的尺寸和位置会随着容器尺寸或者内容的变化而变化
+    　　　　　　依赖于jQuery和相关几个类库
+   　　　　　　 不需要定义宽度和高度。它会固定在容器的右下
+   　　　　　　 你可以修改任何滚动条的样式，不依赖于其它脚本
+  　　　　　　  滚动条支持'update'方法。如果你需要修改滚动条的位置和大小，只需要调用这个方法即可
+  　　　　　　  不使用'scrollTop'和'scrollLeft'，不是用任何绝对定位
+　　　　　　</p>
+　　　　</div>
+　　</div>
+　　<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/1.4.0/perfect-scrollbar.js"></script>
+　　<script>
+　　　　$(function() {
+    const container = document.querySelector('#Demo');
+    const ps = new PerfectScrollbar(container);
+
+    // or just with selector string
+    // const ps = new PerfectScrollbar('#container');
+
+        　//$('#Demo').perfectScrollbar();
+　　　　});
+　　</script>
+</body>
+</html>

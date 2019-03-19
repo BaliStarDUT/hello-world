@@ -1,0 +1,18 @@
+<div id="editor"></div>
+<script src="https://cdn.bootcss.com/ace/1.4.3/ace.js"></script>
+<script src="https://cdn.bootcss.com/ace/1.4.3/theme-twilight.js"></script>
+<script src="https://cdn.bootcss.com/ace/1.4.3/mode-json.js"></script>
+<!-- <script src="https://cdn.bootcss.com/ace/1.4.3/mode-java.js"></script> -->
+<link rel="stylesheet" href="./editor.css">
+
+<script>
+    var api = {
+        "apiVersion":"v1"
+    }
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    // var JavaMode = ace.require("ace/mode/json").Mode;
+    editor.session.setMode("ace/mode/json");
+    var text = JSON.stringify(api, null, '\t');
+    editor.session.setValue(text)
+</script>

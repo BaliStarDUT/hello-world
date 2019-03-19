@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="http://www.runoob.com/try/angularjs/1.2.5/angular.min.js"></script>
+<script src="https://cdn.bootcss.com/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.js"></script>
+</head>
+<body ng-app="myApp" style="background:#4A4A4A; overflow:hidden;" class="row" >
+<div style="color:#fff; font-size:30px; font-weight:bold; text-shadow:3px 3px 3px #ccc;-webkit-text-shadow:3px 3px 3px #ccc; text-align:center; margin-top:30px;">FE-演示平台</div>
+<section class="row">
+    <section class="col-md-6" style="margin:40px auto; float:none; background:#fff; padding:30px;" ng-controller="tabDemo">
+        <p>通过设置改变开关：</p>
+        <p>
+            <button class="btn btn-sm btn-danger"  ng-click="tabs[0].active = true">选中第2个</button>
+            <button class="btn btn-sm btn-default" ng-click="tabs[1].active = true">选中第3个</button>
+            <button class="btn btn-sm btn-default" ng-click="tabs[1].disabled = !tabs[1].disabled">开启/禁用第3个</button>
+        </p>
+        <hr>
+        <tabset>
+            <tab heading="html5">html5内容</tab>
+            <tab heading="{{tab.title}}" ng-repeat="tab in tabs" active="tab.active" disabled="tab.disabled">{{tab.content}}</tab>
+            <tab select="alertMe()">
+                <tab-heading>
+               <!-- //heading。 标题文本或者html内容-->
+                    <i class="glyphicon glyphicon-bell">弹出!</i>
+                </tab-heading>
+                欢迎您！
+            </tab>
+        </tabset>
+        <hr>
+        <!--// vertical 方式 默认为false为水平方向 反之。。。-->
+        <tabset vertical="false" type="pills">
+            <tab heading="第一列">第一列内容</tab>
+            <tab heading="第二列">第二列内容</tab>
+        </tabset>
+    </section>
+</section>
+</body
+<script type="text/javascript">
+    angular.module('myApp',['ui.bootstrap']).controller('tabDemo',function($scope,$window){
+        $scope.tabs = [
+            {title : 'jquery' ,content : '我是jquery内容'},
+            {title : 'angular' ,content : '我是angular内容'}
+        ];
+        $scope.alertMe = function(){
+            $window.alert('欢迎您!')
+        }
+    })
+</script>
+</html>

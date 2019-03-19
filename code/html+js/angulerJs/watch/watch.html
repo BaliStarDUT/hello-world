@@ -27,5 +27,8 @@
             console.log(n);
             $scope.error2 = n.title.length>3 ? '最多三个字' : '';
         }, true);
+        var data3 = "aaa";
+        console.log($filter('orderBy')(, ));
+
     }]);
 </script>

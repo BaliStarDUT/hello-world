@@ -2,23 +2,25 @@ import  java.io.InputStream;
 import  java.io.BufferedReader;
 import  java.io.InputStreamReader;
 
-public class RunShellDemo{
+public class RunShellDemo0{
     public static void main(String[] args) {
-        String path = "C:\\Users\\yang\\Documents\\GitHub\\hello-world\\code\\java.lang\\RunShellDemo.java";
            Runtime run = Runtime.getRuntime();
-           StringBuilder result = new StringBuilder();
-           boolean flag = false;
            try {
                // run.exec("cmd /k shutdown -s -t 3600");
-               Process process = run.exec(new String[]{"/bin/bash","./nginx/nginxT.sh"});
-               BufferedReader errorR = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+               Process process = run.exec("nginx -t");
+
+               // InputStream error = process.getErrorStream();
+               // BufferedReader errorR = new BufferedReader(new InputStreamReader(error));
+               // String linee = null;
+               // while(null!=(linee = errorR.readLine())){
+               //   System.out.println(linee);
+               // }
+
+               InputStream out = process.getOutputStream();
+               BufferedReader outR = new BufferedReader(new InputStreamReader(out));
                String linee = null;
-               while(null!=(linee = errorR.readLine())){
+               while(null!=(linee = outR.readLine())){
                  System.out.println(linee);
-                 result.append(linee);
-                 if(linee.contains("test is successful")){
-                     flag = true;
-                 }
                }
 
                // InputStream in = process.getInputStream();
@@ -34,9 +36,5 @@ public class RunShellDemo{
            } catch (Exception e) {
                e.printStackTrace();
            }
-           if(flag == false){
-               System.out.println(result);
-           }
-           return;
     }
 }
