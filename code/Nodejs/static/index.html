@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="{{app.description}}">
+
+<title data-ng-bind="pageTitle()">K8s-DashBoard</title>
+<link rel="shortcut icon" href="/ironman.png" type="image/x-icon">
+<!-- Bootstrap -->
+<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+<!-- Themify Icons -->
+<link rel="stylesheet" href="../bower_components/themify-icons/themify-icons.css">
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+<!-- Clip-Two CSS -->
+<link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="./css/plugins.css">
+<!-- Clip-Two Theme -->
+<link rel="stylesheet" data-ng-href="./css/themes/{{ app.layout.theme }}.css" />
+
+<!-- <link href="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.1/css/perfect-scrollbar.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.1/js/min/perfect-scrollbar.jquery.min.js"></script> -->
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<!-- Angular -->
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+
+<!-- Angular Translate -->
+<script src="../bower_components/angular-translate/angular-translate.min.js"></script>
+<script src="../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+<!-- UI Bootstrap -->
+<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<!-- Loading Bar -->
+<script src="../bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+
+
+
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular-cookies.js"></script>
+<script src="https://cdn.bootcss.com/oclazyload/0.6.3/ocLazyLoad.js"></script>
+<!-- <script src="https://cdn.bootcss.com/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script> -->
+
+<!-- Clip-Two Scripts -->
+<script type="text/javascript" src="./js/config.main.js"></script>
+<script type="text/javascript" src="./js/application.js"></script>
+<script type="text/javascript" src="./js/config.constant.js"></script>
+<script type="text/javascript" src="./js/config.router.js"></script>
+<!-- Clip-Two Directives -->
+<script type="text/javascript" src="./js/directive/sidebars.js"></script>
+<script type="text/javascript" src="./js/directive/toggle.js"></script>
+<script type="text/javascript" src="./js/directive/perfect-scrollbar.js"></script>
+<script type="text/javascript" src="./js/directive/chat.js"></script>
+<script type="text/javascript" src="./js/directive/sparkline.js"></script>
+
+
+<!-- Clip-Two Controllers -->
+<script type="text/javascript" src="./js/controller/AppCtrl.js"></script>
+<script type="text/javascript" src="./js/controller/indexController.js"></script>
+<!-- <script type="text/javascript" src="./js/controller/chatCtrl.js"></script> -->
+
+</head>
+<body ng-controller="AppCtrl">
+    <div ui-view id="app" ng-class="{'app-mobile' : app.isMobile,
+		'app-navbar-fixed' : app.layout.isNavbarFixed,
+		'app-sidebar-fixed' : app.layout.isSidebarFixed,
+		'app-sidebar-closed':app.layout.isSidebarClosed,
+        'app-footer-fixed':app.layout.isFooterFixed}" ></div>
+</body>
+</html>

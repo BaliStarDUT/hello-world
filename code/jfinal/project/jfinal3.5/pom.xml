@@ -15,7 +15,7 @@
     <!-- 定义统一版本号 -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jfinal.version>3.4-SNAPSHOT</jfinal.version>
+        <jfinal.version>3.5</jfinal.version>
         <jfinal-undertow.version>1.4</jfinal-undertow.version>
         <!-- <jetty.version>9.2.7.v20150116</jetty.version> -->
     </properties>

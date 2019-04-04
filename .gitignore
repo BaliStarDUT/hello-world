@@ -11,6 +11,8 @@
 *.log
 *.jar
 *.jpg
+**.exe
+**.zip
 code/go/beego/beego
 code/go/beego/beego_linux
 code/go/beego/beego_mac
@@ -42,3 +44,4 @@ code/nginx/pj5FWIq60-Qof0B2zbReJ4ehVjw-pixDTG2qIJcnvAc
 code/voice/public
 code/voice/public.zip
 code/java.io/serialize.txt
+code/Elasticsearch

@@ -1,0 +1,42 @@
+apiVersion: mysql.middleware/v1alpha1
+kind: MySQLCluster
+metadata:
+  name: example-mysql-cluster
+spec:
+  # 代表mysql集群内实例个数
+  replicas: 6
+  # 代表是否进入维修状态
+  pause: true
+  # MySQL主实例名称，创建时不赋值
+  master: pod-0
+  # 镜像地址
+  repository: library/mysql
+  # 镜像版本，便于后续多版本特化支持
+  version: 3.2.8
+  # redis 实例配置详情
+  pod:
+    # 标签管理：map[string][string]
+    labels:
+      key: value
+    # 备注管理：map[string][string]
+    annotations:
+      key: value
+    # 环境变量管理
+    env:
+    - key: value
+    # 亲和性管理
+    affinity:
+      nodeAffinity: NodeAffinity
+      podAffinity: PodAffinity
+      podAntiAffinity: PodAntiAffinity
+    # 资源管理
+    resources:
+      limits:
+        #cpu, memory, storage,ephemeral-storage
+        resourceName: value
+      requests:
+         resourceName: value
+    # 监控镜像
+    monitorImage: string
+    # 初始化镜像
+    initImage: string
