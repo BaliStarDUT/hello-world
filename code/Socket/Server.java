@@ -1,5 +1,5 @@
 //package com.yang.test;
-import java.net.ServerSocket; 
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.InetAddress;
 import java.net.SocketTimeoutException;
@@ -15,9 +15,9 @@ import java.util.Timer;
 public class Server{
 public static void main(String[] args){
 		try{
-		//1.创建一个服务器端的Socket，指定绑定的端口	
+		//1.创建一个服务器端的Socket，指定绑定的端口
 		ServerSocket serverSocket = new ServerSocket(8888);
-		serverSocket.setSoTimeout(10*1000);//设置连接的超时时间10秒
+		serverSocket.setSoTimeout(100*1000);//设置连接的超时时间10秒
 		Socket socket = null;
 		//记录客户端连接次数
 		int count = 0;
@@ -29,7 +29,7 @@ public static void main(String[] args){
 			 System.out.println("已经连接……");
 			 }
 			//创建一个新的线程
-			ServerThread serverThread = new ServerThread(socket);	
+			ServerThread serverThread = new ServerThread(socket);
 			//启动线程
 			serverThread.start();
 			count++;

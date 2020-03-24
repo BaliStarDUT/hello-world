@@ -10,7 +10,7 @@ class Log4jTest{
   }
 	public static void log4jTest(){
 		Logger logger = Logger.getLogger(Log4jTest.class);
-		logger.info("user.dir"+System.getProperty("user.dir"));
+		logger.info("user.dir:"+System.getProperty("user.dir"));
 		logger.info("hello {}");
 	    logger.debug("hello {}");
 	    logger.error("hello {}");
