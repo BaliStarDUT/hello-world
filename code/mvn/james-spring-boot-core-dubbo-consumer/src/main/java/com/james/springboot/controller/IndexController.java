@@ -1,7 +1,9 @@
 package com.james.springboot.controller;
 
+import com.james.springboot.service.DemoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +15,14 @@ import java.net.URI;
 @RestController
 public class IndexController {
     private Logger logger = LoggerFactory.getLogger(getClass());
+
+    @Autowired
+    DemoService demoService;
+
     @RequestMapping("/hello")
     String home() {
-        return "Hello World!"+"你好世界";
+        return demoService.sayHello("ddd");
+//        return "Hello World!"+"你好世界";
     }
 
     @RequestMapping("/hello{num}")

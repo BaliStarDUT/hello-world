@@ -7,6 +7,6 @@
        http://code.alibabatech.com/schema/dubbo
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application name="demo-consumer"/>
-    <dubbo:registry protocol="zookeeper" address="192.168.1.164:2181"/>
-    <dubbo:reference id="demoService" interface="com.james.springboot.service.DemoService"/>
+    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
+    <dubbo:reference id="demoService" timeout="10000" interface="com.james.springboot.service.DemoService"/>
 </beans>
