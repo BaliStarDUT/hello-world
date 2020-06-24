@@ -2,6 +2,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.HashMap;
+
 //备选课程类
 public class ListTest{
 	//用于存放备选课程的List
@@ -94,16 +97,29 @@ public class ListTest{
 	}
 
 	public static void main(String[] args){
-		ListTest lt = new ListTest();
-		lt.testAdd();
-		lt.testType();
-		lt.testForEach();
+		// ListTest lt = new ListTest();
+		// lt.testAdd();
+		// lt.testType();
+		// lt.testForEach();
 		/*lt.testGet();
 		lt.testIterator();
 		lt.testForEach();
 		lt.testModify();
 		lt.testForEach();
 		lt.testRemove();*/
+		test_list();
+	}
 
+	public static void test_list(){
+		List<Map> param_data = new ArrayList<>(2);
+		HashMap<String,Object> param2 = new HashMap<String,Object>();
+		param2.put("a","1");
+		param2.put("b","2");
+		param_data.add(param2);
+		param2.clear();
+		param2.put("c","1");
+		param2.put("d","2");
+		param_data.add(param2);
+		System.out.println(param_data);
 	}
 }

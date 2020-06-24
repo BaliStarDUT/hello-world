@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>net.james</groupId>
+  <artifactId>guava-maven</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <packaging>jar</packaging>
+
+  <name>guava-maven</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+      <powermock.version>2.0.2</powermock.version>
+
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+      <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>29.0-jre</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+      <dependency>
+          <groupId>org.powermock</groupId>
+          <artifactId>powermock-module-junit4</artifactId>
+          <version>${powermock.version}</version>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.powermock</groupId>
+          <artifactId>powermock-api-mockito2</artifactId>
+          <version>${powermock.version}</version>
+          <scope>test</scope>
+      </dependency>
+
+  </dependencies>
+  <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+                <encoding>UTF-8</encoding>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-report-plugin</artifactId>
+            <version>3.0.0-M3</version>
+        </plugin>
+      <plugin>
+        <!-- 此处用于将 Cobertura 插件集成到 Maven 中 -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.7</version>
+          <configuration>
+              <check></check>
+              <formats>
+                  <format>html</format>
+                  <format>xml</format>
+              </formats>
+              <aggregate>true</aggregate>
+              <instrumentation>
+                  <excludes>
+                      <!--此处用于指定哪些类会从单元测试的统计范围中被剔除 -->
+                      <exclude>net/james/service/Schedu*.class</exclude>
+                      <!--<exclude>**/Schedu*.class</exclude>-->
+                      <!--<exclude>**/*.class</exclude>-->
+                  </excludes>
+                  <!--<includes>-->
+                      <!--<include>net/james/service/*.class</include>-->
+                  <!--</includes>-->
+              </instrumentation>
+          </configuration>
+          <!--<executions>-->
+              <!--<execution>-->
+                  <!--<goals>-->
+                      <!--<goal>clean</goal>-->
+                  <!--</goals>-->
+              <!--</execution>-->
+          <!--</executions>-->
+      </plugin>
+    </plugins>
+  </build>
+</project>

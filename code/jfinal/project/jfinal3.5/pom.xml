@@ -26,8 +26,36 @@
             <artifactId>jfinal-undertow</artifactId>
             <version>${jfinal-undertow.version}</version>
 		</dependency>
-    </dependencies>
+        <dependency>
+            <groupId>pure</groupId>
+            <artifactId>purejava</artifactId>
+            <version>0.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/purejavacomm-0.0.17.jar</systemPath>
+        </dependency>
+        <!--<dependencies>-->
+            <dependency>
+                <groupId>org.jetbrains.pty4j</groupId>
+                <artifactId>pty4j</artifactId>
+                <version>0.8.6</version>
+            </dependency>
+        <!--</dependencies>-->
 
+        <!--<repositories>-->
+            <!--<repository>-->
+                <!--<id>bintray-jetbrains-pty4j</id>-->
+                <!--<name>bintray</name>-->
+                <!--<url>https://jetbrains.bintray.com/pty4j</url>-->
+            <!--</repository>-->
+        <!--</repositories>-->
+    </dependencies>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>bintray-jetbrains-pty4j</id>-->
+            <!--<name>bintray</name>-->
+            <!--<url>https://jetbrains.bintray.com/pty4j</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
     <build>
         <!-- <resources>
     			<resource>

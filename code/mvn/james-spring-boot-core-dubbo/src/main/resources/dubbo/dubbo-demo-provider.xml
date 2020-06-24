@@ -10,6 +10,9 @@
     <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
     <dubbo:protocol name="dubbo" port="20880"/>
     <dubbo:provider timeout="5000" />
-    <dubbo:service interface="com.james.springboot.service.DemoService" ref="demoService"/>
+    <dubbo:service interface="com.james.springboot .service.DemoService" ref="demoService" >
+        <dubbo:method name="findAllPerson" timeout="10000" retries="9" loadbalance="leastactive" actives="5" />
+    </dubbo:service>
+
     <bean id="demoService" class="com.james.springboot.service.provider.DemoServiceImpl"/>
 </beans>
