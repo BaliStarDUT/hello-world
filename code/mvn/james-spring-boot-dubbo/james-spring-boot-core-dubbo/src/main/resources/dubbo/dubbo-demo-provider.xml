@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:application name="${dubbo.provider.app-name}"/>
+    <dubbo:registry protocol="zookeeper" address="${dubbo.provider.registry-address}"/>
+    <dubbo:protocol name="dubbo" port="${dubbo.provider.port}"/>
+    <dubbo:provider timeout="5000" />
+    <dubbo:annotation package="com.james.springboot.service.provider"/>
+
+    <!--<dubbo:service interface="com.james.springboot.service.DemoService" ref="demoService" >-->
+        <!--<dubbo:method name="sayHello" timeout="10000" retries="9" loadbalance="leastactive" actives="5" />-->
+    <!--</dubbo:service>-->
+
+    <!--<bean id="demoService" class="com.james.springboot.service.provider.DemoServiceImpl"/>-->
+</beans>
