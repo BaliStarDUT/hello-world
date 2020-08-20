@@ -1,4 +1,7 @@
 /build/
+/output/
+/code/devops/
+/code/ssl/
 **/target/**
 **/.idea/**
 .settings/
