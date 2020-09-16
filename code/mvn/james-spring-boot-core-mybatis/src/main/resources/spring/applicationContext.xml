@@ -8,13 +8,16 @@
 						http://www.springframework.org/schema/context/spring-context-4.0.xsd"
        default-lazy-init="false">
     <!--读入配置属性文件-->
-    <context:property-placeholder location="classpath:application.properties"/>
+    <!--<context:property-placeholder location="classpath:application.properties"/>-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:application.properties</value>
+            </list>
+        </property>
+    </bean>
     <!--引入服务提供者配置文件-->
     <import resource="classpath:dubbo/dubbo-demo-provider.xml"/>
     <!--引入服务消费者配置文件-->
     <!--<import resource="spring/spring-consumer.xml"/>-->
-
-    <!--引入定时任务配置文件-->
-    <import resource="./cronTask.xml"/>
-
 </beans>

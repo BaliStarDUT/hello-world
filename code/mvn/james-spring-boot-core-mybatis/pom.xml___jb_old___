@@ -33,13 +33,13 @@
             <artifactId>mybatis</artifactId>
             <version>3.2.2</version>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>com.soecode.wxtools</groupId>
             <artifactId>wxtools</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/wx-tools-1.0-SNAPSHOT.jar</systemPath>
-        </dependency>
+        </dependency> -->
         <!---->
         <dependency>
             <groupId>org.springframework.boot</groupId>

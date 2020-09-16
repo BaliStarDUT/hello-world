@@ -34,5 +34,11 @@ func main() {
 	log.Println(mem2)
 	mem3 = int(mem1 / 1048576 * 9 / 10)
 	log.Println(mem3)
+	// var arr []int
+	// arr := make([]int,0)
+	// arr := []int{}
+	// arr := []int{nil}
+
+	fmt.Printf("%v",nil)
 
 }

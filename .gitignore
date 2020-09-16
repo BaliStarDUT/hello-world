@@ -16,6 +16,7 @@
 *.jpg
 **.exe
 **.zip
+code/html+js
 code/go/beego/beego
 code/go/beego/beego_linux
 code/go/beego/beego_mac
