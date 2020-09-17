@@ -12,16 +12,16 @@ import javax.mail.MessagingException;
 class SendEmailTest{
   public static void main(String[] args){
       // Recipient's email ID needs to be mentioned.
-      String to = "drawnkid@yeah.net";
+      String to = "bbbbb@yeah.net";
       // Sender's email ID needs to be mentioned
-      String from = "664005985@qq.com";
+      String from = "aaaa@qq.com";
       // Assuming you are sending email from localhost
      String host = "smtp.qq.com";
      // Get system properties
      Properties properties = System.getProperties();
      // Setup mail server
-     properties.setProperty("mail.user","664005985@qq.com");
-     properties.setProperty("mail.password","balixianluo03041yz");
+     properties.setProperty("mail.user","aaa@qq.com");
+     properties.setProperty("mail.password","aaaaaa");
 
      properties.setProperty("mail.smtp.host", host);
      properties.setProperty("mail.smtp.port", "465");
