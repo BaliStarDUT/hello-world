@@ -13,11 +13,30 @@
         <version>1.5.2.RELEASE</version>
     </parent>
 
+    <properties>
+        <mybatis.spring.version>1.2.0</mybatis.spring.version>
+        <spring.version>4.3.2.RELEASE</spring.version>
+    </properties>
     <!-- Additional lines to be added here... -->
     <dependencies>
-	 <dependency>
+    	 <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -29,16 +48,24 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
+        <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.2.2</version>
         </dependency>
         <dependency>
-            <groupId>com.soecode.wxtools</groupId>
-            <artifactId>wxtools</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/wx-tools-1.0-SNAPSHOT.jar</systemPath>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.9</version>
         </dependency>
         <!---->
         <dependency>
@@ -127,7 +154,7 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.16</version>
+                        <version>5.1.47</version>
                     </dependency>
                 </dependencies>
             </plugin>

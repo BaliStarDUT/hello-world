@@ -17,7 +17,7 @@
         </property>
     </bean>
     <!--引入服务提供者配置文件-->
-    <import resource="classpath:dubbo/dubbo-demo-provider.xml"/>
+    <!--<import resource="classpath:dubbo/dubbo-demo-provider.xml"/>-->
     <!--引入服务消费者配置文件-->
     <!--<import resource="spring/spring-consumer.xml"/>-->
 </beans>
