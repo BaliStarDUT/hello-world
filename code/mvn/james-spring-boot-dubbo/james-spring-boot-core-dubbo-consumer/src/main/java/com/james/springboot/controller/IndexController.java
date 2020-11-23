@@ -17,7 +17,7 @@ public class IndexController {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
 //    @Autowired
-    @Reference(group = "demo",timeout = 20000)
+    @Reference(group = "demo",timeout = 2000)
     DemoService demoService;
 
     @RequestMapping("/hello")

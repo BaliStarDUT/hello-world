@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <title th:text="${title}">英雄联盟英雄图</title>
 </head>
 <body>
 <h1 th:text="${title}">英雄联盟英雄图</h1>
+<tr th:each="user : ${users}">
+    <!--<td>-->
+        <!--<a th:href="@{/owners/__${owner.id}__}" th:text="${owner.id + ' ' + owner.name}"/></a>-->
+    <!--</td>-->
+    <td th:text="${user.id}"></td>
+    <td th:text="${user.name}"></td>
+    <td th:text="${user.age}"></td>
+    <!--<td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "/></td>-->
+</tr>
 </body>
 </html>
