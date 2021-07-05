@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">英雄联盟英雄图</title>
+</head>
+<body>
+<h1 th:text="${title}">英雄联盟英雄图</h1>
+<table>
+    <tr th:each="hero : ${heros}">
+        <!--<td>-->
+        <!--<a th:href="@{/owners/__${owner.id}__}" th:text="${owner.id + ' ' + owner.name}"/></a>-->
+        <!--</td>-->
+        <td th:text="${hero.id}">id</td>
+        <td th:text="${hero.nameCn}">name_cn</td>
+        <td th:text="${hero.nameEn}">name_en</td>
+        <td th:text="${hero.nickname}">nickname</td>
+        <th th:text="${hero.type}" />
+        <th th:text="${hero.story}" />
+        <th th:text="${hero.headpicUrl}" />
+        <!--<td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "/></td>-->
+    </tr>
+</table>
+<div>
+    <fieldset >
+        <legend>league of legend</legend>
+        <form  th:action="@{/lolheros/new}" th:object="${lolHero}"   method="post">
+               <!--enctype="multipart/form-data">-->
+            <table>
+                <tr>
+                    <td>Hero's Nick Name:</td>
+                    <td><input type="text" name="nickname" th:field="*{nickname}" /></td>
+                    <td th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}">Nick Name Error</td>
+                </tr>
+                <tr>
+                    <td>Hero's CN Name:</td>
+                    <td><input type="text" name="nameCn" th:field="*{nameCn}" /></td>
+                    <td th:if="${#fields.hasErrors('nameCn')}" th:errors="*{nameCn}">CN Name Error</td>
+                </tr>
+                <tr>
+                    <td>Hero's EN Name:</td>
+                    <td><input type="text" name="nameEn" th:field="*{nameEn}" /></td>
+                    <td th:if="${#fields.hasErrors('nameEn')}" th:errors="*{nameEn}">EN Name Error</td>
+                </tr>
+                <tr>
+                    <td>Hero's Type:</td>
+                    <td><select name="type  " th:field="*{type}">
+                        <option value="Marksman">射手</option>
+                        <option value="Tank">坦克</option>
+                        <option value="Assassin">刺客</option>
+                        <option value="Mage">法师</option>
+                        <option value="Support">辅助</option>
+                        <option value="Fighter">战士</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>英雄头像</td>
+                    <td><input name="heroheadpic" type="file" /></td>
+                </tr>
+                <tr>
+                    <td>英雄声音</td>
+                    <td><input name="herosound" type="file" /></td>
+                </tr>
+                <tr>
+                    <td>Hero's Story</td>
+                    <td>
+				<textarea name="story" cols="34" th:field="*{story}">
+				</textarea>
+                    </td>
+                    <td th:if="${#fields.hasErrors('story')}" th:errors="*{story}">Story Error</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                    <td><button type="reset">Reset</button></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+</div>
+<div class="container theme-showcase" role="main">
+    <div class="jumbotron">
+        <h1>英雄联盟</h1>
+        <p>在符文之地，魔法就是一切。	</p>
+    </div>
+    <div class="row">
+        <!--<div class="col-md-4" th:each="hero : ${herosList}">-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-4">-->
+                    <!--<img src="/resources/image/champions/Zyra_Square_0.png" class="img-rounded"-->
+                         <!--th:attr="src=@{/lolheros/images/}+${hero.headpicUrl},title=${hero.nickname},alt=${hero.nickname}" />-->
+                <!--</div>-->
+                <!--<div class="col-md-8">-->
+                    <!--<p th:text="${hero.nickname}" />-->
+                    <!--<p th:text="${hero.nameCn}" />-->
+                    <!--&lt;!&ndash;<p th:text="${hero.story}" />&ndash;&gt;-->
+                    <!--<a th:attr="href=@{/heros/}+${hero.nameEn}"><p th:text="${hero.nameEn}" /></a>-->
+                    <!--<p>-->
+                        <!--<span class="label label-info"  th:text="${hero.type}"></span>-->
+                        <!--&lt;!&ndash;				  				<span class="label label-info">辅助</span> &ndash;&gt;-->
+                    <!--</p>-->
+                    <!--<audio style="max-width: 90%" src="/resources/music/Zyra.mp3" controls="controls" preload="none"-->
+                           <!--th:attr="src=@{/lolheros/sounds/}+${hero.soundsUrl}" >Your browser does not support the audio tag.</audio>-->
+                    <!--&lt;!&ndash; 					  		<audio style="max-width: 90%" src="/resources/music/Zyra.mp3"  controls="controls" preload="none">Your browser does not support the audio tag.</audio> &ndash;&gt;-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+    </div>
+</div>
+<!--<div>-->
+    <!--<form>-->
+        <!--<select>-->
+            <!--<option>a</option>-->
+            <!--<option>a</option>-->
+            <!--<option>a</option>-->
+            <!--<option>a</option>-->
+        <!--</select>-->
+        <!--<button>ok?</button>-->
+        <!--<input >ok</input>-->
+        <!--<a th:href="@{http://www.thymeleaf.org}">Thymeleaf</a>-->
+
+    <!--</form>-->
+<!--</div>-->
+</body>
+</html>
