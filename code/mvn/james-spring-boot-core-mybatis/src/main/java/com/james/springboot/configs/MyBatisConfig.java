@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.io.IOException;
@@ -17,8 +18,8 @@ import java.io.IOException;
 /**
  * Created by James Yang on 2017/6/27 0027 上午 11:01.
  */
-@Configuration
-//@Component
+//@Configuration
+@Component
 //@MapperScan(basePackages = "com.james.springboot.dao", sqlSessionFactoryRef = "sqlSessionFactoryBean")
 public class MyBatisConfig {
 
