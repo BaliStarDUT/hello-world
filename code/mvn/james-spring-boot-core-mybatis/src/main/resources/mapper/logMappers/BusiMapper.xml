@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.james.springboot.dao.busi.BusiMapper">
+  <resultMap id="BaseResultMap" type="com.james.springboot.dao.bean.Busi">
+    <id column="busi_id" jdbcType="VARCHAR" property="busiId" />
+    <result column="busi_code" jdbcType="VARCHAR" property="busiCode" />
+    <result column="busi_name" jdbcType="VARCHAR" property="busiName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="cmos_modify_time" jdbcType="TIMESTAMP" property="cmosModifyTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    busi_id, busi_code, busi_name, create_time, cmos_modify_time
+  </sql>
+  <select id="selectByExample" parameterType="com.james.springboot.dao.bean.BusiExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from busi
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from busi
+    where busi_id = #{busiId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from busi
+    where busi_id = #{busiId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.james.springboot.dao.bean.BusiExample">
+    delete from busi
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.james.springboot.dao.bean.Busi">
+    insert into busi (busi_id, busi_code, busi_name, 
+      create_time, cmos_modify_time)
+    values (#{busiId,jdbcType=VARCHAR}, #{busiCode,jdbcType=VARCHAR}, #{busiName,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{cmosModifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.james.springboot.dao.bean.Busi">
+    insert into busi
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="busiId != null">
+        busi_id,
+      </if>
+      <if test="busiCode != null">
+        busi_code,
+      </if>
+      <if test="busiName != null">
+        busi_name,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="cmosModifyTime != null">
+        cmos_modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="busiId != null">
+        #{busiId,jdbcType=VARCHAR},
+      </if>
+      <if test="busiCode != null">
+        #{busiCode,jdbcType=VARCHAR},
+      </if>
+      <if test="busiName != null">
+        #{busiName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cmosModifyTime != null">
+        #{cmosModifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.james.springboot.dao.bean.BusiExample" resultType="java.lang.Long">
+    select count(*) from busi
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update busi
+    <set>
+      <if test="record.busiId != null">
+        busi_id = #{record.busiId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.busiCode != null">
+        busi_code = #{record.busiCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.busiName != null">
+        busi_name = #{record.busiName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.cmosModifyTime != null">
+        cmos_modify_time = #{record.cmosModifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update busi
+    set busi_id = #{record.busiId,jdbcType=VARCHAR},
+      busi_code = #{record.busiCode,jdbcType=VARCHAR},
+      busi_name = #{record.busiName,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      cmos_modify_time = #{record.cmosModifyTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.james.springboot.dao.bean.Busi">
+    update busi
+    <set>
+      <if test="busiCode != null">
+        busi_code = #{busiCode,jdbcType=VARCHAR},
+      </if>
+      <if test="busiName != null">
+        busi_name = #{busiName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cmosModifyTime != null">
+        cmos_modify_time = #{cmosModifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where busi_id = #{busiId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.james.springboot.dao.bean.Busi">
+    update busi
+    set busi_code = #{busiCode,jdbcType=VARCHAR},
+      busi_name = #{busiName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      cmos_modify_time = #{cmosModifyTime,jdbcType=TIMESTAMP}
+    where busi_id = #{busiId,jdbcType=VARCHAR}
+  </update>
+</mapper>

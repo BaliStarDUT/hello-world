@@ -1,5 +1,7 @@
-package com.james.springboot.dao;
+package com.james.springboot.dao.hero;
 
+import com.james.springboot.dao.bean.LolHeros;
+import com.james.springboot.dao.bean.LolHerosExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

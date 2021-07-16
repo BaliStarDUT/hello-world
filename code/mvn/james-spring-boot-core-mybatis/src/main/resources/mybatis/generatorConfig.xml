@@ -54,7 +54,7 @@
     </javaTypeResolver>
 
     <!-- 生成实体类地址 -->
-    <javaModelGenerator targetPackage="com.james.springboot.dao" targetProject="src/main/java">
+    <javaModelGenerator targetPackage="com.james.springboot.dao.bean" targetProject="src/main/java">
         <!-- 是否让 schema 作为包的后缀，默认为false -->
         <!--<property name="enableSubPackages" value="false"/>-->
         <!-- 是否针对string类型的字段在set方法中进行修剪，默认false -->
@@ -63,7 +63,7 @@
 
 
     <!-- 生成Mapper.xml文件 -->
-    <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources/mybatis">
+    <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources/mapper/logMappers">
         <!--<property name="enableSubPackages" value="false"/>-->
     </sqlMapGenerator>
 
@@ -78,7 +78,7 @@
          domainObjectName 是要生成的实体类名(可以不指定，默认按帕斯卡命名法将表名转换成类名)
          enableXXXByExample 默认为 true， 为 true 会生成一个对应Example帮助类，帮助你进行条件查询，不想要可以设为false
          -->
-    <table schema="" tableName="lolheros" domainObjectName="LolHeros"
+    <table schema="" tableName="busi" domainObjectName="Busi"
            enableCountByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
            enableUpdateByExample="true" selectByExampleQueryId="true">
         <!--是否使用实际列名,默认为false-->

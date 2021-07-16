@@ -1,8 +1,8 @@
 package com.james.springboot.service.impl;
 
-import com.james.springboot.dao.LolHeros;
-import com.james.springboot.dao.LolHerosExample;
-import com.james.springboot.dao.LolHerosMapper;
+import com.james.springboot.dao.bean.LolHeros;
+import com.james.springboot.dao.bean.LolHerosExample;
+import com.james.springboot.dao.hero.LolHerosMapper;
 import com.james.springboot.service.LolHerosService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

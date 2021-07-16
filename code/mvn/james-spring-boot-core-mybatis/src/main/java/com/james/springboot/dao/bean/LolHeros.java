@@ -1,4 +1,4 @@
-package com.james.springboot.dao;
+package com.james.springboot.dao.bean;
 
 public class LolHeros {
     private Integer id;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper  namespace="com.james.springboot.dao.LolHerosMapper">
-  <resultMap id="BaseResultMap" type="com.james.springboot.dao.LolHeros">
+<mapper  namespace="com.james.springboot.dao.hero.LolHerosMapper">
+  <resultMap id="BaseResultMap" type="com.james.springboot.dao.bean.LolHeros">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="headpic_url" jdbcType="VARCHAR" property="headpicUrl" />
     <result column="name_cn" jdbcType="VARCHAR" property="nameCn" />
@@ -11,7 +11,7 @@
     <result column="story" jdbcType="VARCHAR" property="story" />
     <result column="type" jdbcType="VARCHAR" property="type" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.james.springboot.dao.LolHeros">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.james.springboot.dao.bean.LolHeros">
     <result column="headpic" jdbcType="LONGVARBINARY" property="headpic" />
     <result column="sounds" jdbcType="LONGVARBINARY" property="sounds" />
   </resultMap>
@@ -79,7 +79,7 @@
   <sql id="Blob_Column_List">
     headpic, sounds
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.james.springboot.dao.LolHerosExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.james.springboot.dao.bean.LolHerosExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -96,7 +96,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.james.springboot.dao.LolHerosExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.james.springboot.dao.bean.LolHerosExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -123,13 +123,13 @@
     delete from lolheros
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.james.springboot.dao.LolHerosExample">
+  <delete id="deleteByExample" parameterType="com.james.springboot.dao.bean.LolHerosExample">
     delete from lolheros
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.james.springboot.dao.LolHeros">
+  <insert id="insert" parameterType="com.james.springboot.dao.bean.LolHeros">
     insert into lolheros (id, headpic_url, name_cn, 
       name_en, nickname, sounds_url, 
       story, type, headpic, 
@@ -139,7 +139,7 @@
       #{story,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{headpic,jdbcType=LONGVARBINARY}, 
       #{sounds,jdbcType=LONGVARBINARY})
   </insert>
-  <insert id="insertSelective" parameterType="com.james.springboot.dao.LolHeros">
+  <insert id="insertSelective" parameterType="com.james.springboot.dao.bean.LolHeros">
     insert into lolheros
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -206,7 +206,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.james.springboot.dao.LolHerosExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.james.springboot.dao.bean.LolHerosExample" resultType="java.lang.Long">
     select count(*) from lolheros
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -280,7 +280,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.james.springboot.dao.LolHeros">
+  <update id="updateByPrimaryKeySelective" parameterType="com.james.springboot.dao.bean.LolHeros">
     update lolheros
     <set>
       <if test="headpicUrl != null">
@@ -313,7 +313,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.james.springboot.dao.LolHeros">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.james.springboot.dao.bean.LolHeros">
     update lolheros
     set headpic_url = #{headpicUrl,jdbcType=VARCHAR},
       name_cn = #{nameCn,jdbcType=VARCHAR},
@@ -326,7 +326,7 @@
       sounds = #{sounds,jdbcType=LONGVARBINARY}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.james.springboot.dao.LolHeros">
+  <update id="updateByPrimaryKey" parameterType="com.james.springboot.dao.bean.LolHeros">
     update lolheros
     set headpic_url = #{headpicUrl,jdbcType=VARCHAR},
       name_cn = #{nameCn,jdbcType=VARCHAR},

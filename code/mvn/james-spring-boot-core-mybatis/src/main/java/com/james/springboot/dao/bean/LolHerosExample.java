@@ -1,4 +1,4 @@
-package com.james.springboot.dao;
+package com.james.springboot.dao.bean;
 
 import java.util.ArrayList;
 import java.util.List;
