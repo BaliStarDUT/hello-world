@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1 th:text="${title}">英雄联盟英雄图</h1>
+<table>
 <tr th:each="user : ${users}">
     <!--<td>-->
         <!--<a th:href="@{/owners/__${owner.id}__}" th:text="${owner.id + ' ' + owner.name}"/></a>-->
@@ -15,5 +16,20 @@
     <td th:text="${user.age}"></td>
     <!--<td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "/></td>-->
 </tr>
+</table>
+<div>
+    <form>
+        <select>
+            <option>a</option>
+            <option>a</option>
+            <option>a</option>
+            <option>a</option>
+        </select>
+        <button>ok?</button>
+        <input >ok</input>
+        <a th:href="@{http://www.thymeleaf.org}">Thymeleaf</a>
+
+    </form>
+</div>
 </body>
 </html>
