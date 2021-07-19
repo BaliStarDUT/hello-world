@@ -53,6 +53,17 @@ func index(w http.ResponseWriter, r *http.Request) {
 	// fmt.Fprint(w,"Hello,this is yang")
 }
 
+// func get_gdp(w http.ResponseWriter, r *http.Request) {
+// 	if r.Method == "GET" {
+// 		printInfo(r)
+// 		gdp := get_GDP()
+// 		w.Write(gdp)
+// 	} else {
+// 		printInfo(r)
+// 	}
+// 	// fmt.Fprint(w,"Hello,this is yang")
+// }
+
 func static_res(w http.ResponseWriter, r *http.Request) {
 	printInfo(r)
 	static_resource := Conf.StaticRoot + Conf.StaticPrefix + r.URL.Path[len(Conf.StaticPrefix):]
@@ -79,6 +90,21 @@ func printInfo(r *http.Request) {
 		fmt.Println("val:", strings.Join(v, ""))
 	}
 }
+
+// func get_GDP() string {
+// 	response, err := http.PostForm("http://spcx.www.gov.cn/ZFW-AccessPlatform/gov/gdp/getGDPValue.dostartYear=2010&startMonth=A&endYear=2020&endMonth=C")
+// 	if err != nil {
+// 		log.Fatal("%s\n", err.String())
+// 	}
+// 	defer response.Body.Close
+// 	gdp, err := ioutil.ReadAll(response.Body)
+// 	if err != nil {
+// 		log.Fatal("%s\n", err.String())
+// 	}
+// 	log.Println(string(gdp))
+// 	return gdp
+// }
+
 func loadConf() {
 	confPath := flag.String("conf", "config/config.json", "path of pipe.json")
 	flag.Parse()
