@@ -1,2 +1,3 @@
 james-spring-boot-smsTest
 **/*.iml
+**/out/**
