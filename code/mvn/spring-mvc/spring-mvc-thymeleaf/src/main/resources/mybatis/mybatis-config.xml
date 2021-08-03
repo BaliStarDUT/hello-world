@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--<properties resource="application-dev.properties"></properties>-->
+
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <setting name="defaultStatementTimeout" value="5000"/>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <property name="dialect" value="mysql"/>
+            <property name="offsetAsPageNum" value="false"/>
+            <property name="rowBoundsWithCount" value="false"/>
+            <property name="pageSizeZero" value="true"/>
+            <property name="reasonable" value="false"/>
+            <property name="supportMethodsArguments" value="false"/>
+            <property name="returnPageInfo" value="none"/>
+        </plugin>
+    </plugins>
+    <!--<environments default="development">-->
+        <!--<environment id="development">-->
+            <!--<transactionManager type="JDBC"/>-->
+            <!--<dataSource type="POOLED" >-->
+                <!--<property name="driver" value="${spring.datasource.driver-class-name}"/>-->
+                <!--<property name="url" value="${spring.datasource.url}"/>-->
+                <!--<property name="username" value="${spring.datasource.username}"/>-->
+                <!--<property name="password" value="${spring.datasource.password}"/>-->
+            <!--</dataSource>-->
+        <!--</environment>-->
+    <!--</environments>-->
+
+    <!--<typeAliases>-->
+        <!--<typeAlias alias="lolHerosMapper" type="net.james.dao.LolHerosMapper"></typeAlias>-->
+    <!--</typeAliases>-->
+
+    <!--<mappers>-->
+        <!--<mapper resource="mybatis/mapper/LolHerosMapper.xml"/>-->
+    <!--</mappers>-->
+
+</configuration>

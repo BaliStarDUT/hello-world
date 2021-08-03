@@ -1,6 +1,6 @@
 package com.james.springboot.service;
 
-import com.james.springboot.dao.LolHeros;
+import com.james.springboot.dao.bean.LolHeros;
 
 import java.util.List;
 
