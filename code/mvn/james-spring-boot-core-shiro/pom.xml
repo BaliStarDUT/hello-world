@@ -29,6 +29,17 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-cas</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
@@ -43,11 +54,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-ehcache</artifactId>
-            <version>1.2.3</version>
-        </dependency>
+
          <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -57,16 +64,15 @@
             <artifactId>druid</artifactId>
             <version>1.0.29</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.casbin</groupId>-->
+            <!--<artifactId>jcasbin</artifactId>-->
+            <!--<version>1.6.3</version>-->
+        <!--</dependency>-->
         <dependency>
-            <groupId>org.xerial</groupId>
-            <artifactId>sqlite-jdbc</artifactId>
-            <!--<version></version>-->
-            <systemPath>${project.basedir}/src/main/resources/sqlite-jdbc-3.21.0.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>com.jfinal</groupId>
-            <artifactId>jfinal-java8</artifactId>
-            <version>${jfinal.version}</version>
+            <groupId>org.casbin</groupId>
+            <artifactId>casbin-spring-boot-starter</artifactId>
+            <version>0.1.2</version>
         </dependency>
     </dependencies>
 

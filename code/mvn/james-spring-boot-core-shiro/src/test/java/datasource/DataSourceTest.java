@@ -1,15 +1,16 @@
 package datasource;
 
-import com.jfinal.plugin.activerecord.generator.Generator;
 import org.junit.Test;
-import java.sql.*;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DataSourceTest {
     Logger logger = LoggerFactory.getLogger(this.getClass().getName());
@@ -34,11 +35,5 @@ public class DataSourceTest {
         rs.close();
         st.close();
         conn.close();
-
-        Generator generator = new Generator(dataSource,"com.james.springboot.basemodel",
-                "baseModel","model","model");
-        generator.addExcludedTable("brute","sqlite_sequence");
-        generator.generate();
-
     }
 }
