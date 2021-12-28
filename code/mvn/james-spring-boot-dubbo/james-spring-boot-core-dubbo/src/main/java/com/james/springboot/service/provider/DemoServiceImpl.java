@@ -14,7 +14,7 @@ public class DemoServiceImpl implements DemoService{
     public String sayHello(String name) {
         logger.info("Provider invoke:{}",name);
         try {
-            Thread.sleep(13000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

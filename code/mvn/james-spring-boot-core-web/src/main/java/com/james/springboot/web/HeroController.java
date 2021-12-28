@@ -1,7 +1,7 @@
-package net.james.controller;
+package com.james.springboot.web;
 
-import net.james.dao.LolHeros;
-import net.james.service.LolHerosService;
+import com.james.springboot.dao.bean.LolHeros;
+import com.james.springboot.service.LolHerosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,18 +9,18 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
 @Controller
-public class  HeroController {
+@RequestMapping(value = "/hero")
+public class HeroController {
 
     @Autowired
     LolHerosService lolHerosService;
 
     @ResponseBody
-    @RequestMapping(value = "/hero",method = RequestMethod.GET)
+    @RequestMapping(value = "/",method = RequestMethod.GET)
     List<LolHeros> getlolHeros(@RequestParam(value = "name_cn") String name_cn,
                                @RequestParam(value = "name_en") String name_en) {
         return lolHerosService.getHeros(name_cn,name_en);
@@ -43,11 +43,6 @@ public class  HeroController {
         model.addAttribute("heros",heros);
         model.addAttribute("lolHero",new LolHeros());
         model.addAttribute("title","Legue of Legent");
-        List<String> names = new ArrayList<String>();
-        for(LolHeros hero : heros){
-            names.add(hero.getNameEn());
-        }
-        model.addAttribute("names",names);
         return "heros";
     }
 

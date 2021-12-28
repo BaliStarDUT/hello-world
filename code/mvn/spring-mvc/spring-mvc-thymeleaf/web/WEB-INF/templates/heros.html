@@ -6,6 +6,10 @@
 </head>
 <body>
 <h1 th:text="${title}">英雄联盟英雄图</h1>
+
+<select >
+    <option th:each="name: ${names}" th:text="${name}" th:href="/${name}"></option>
+</select>
 <table>
     <tr th:each="hero : ${heros}">
         <!--<td>-->

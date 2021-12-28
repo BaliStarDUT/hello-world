@@ -51,8 +51,6 @@
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
             <version>0.1</version>
-            <!--<scope>system</scope>-->
-            <!--<systemPath>${project.basedir}/lib/zkclient-0.1.jar</systemPath>-->
         </dependency>
 
         <dependency>

@@ -14,8 +14,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @Configuration
 @ImportResource(locations={"classpath:spring/applicationContext.xml"})
-//@EnableScheduling
-//C:\Users\yang\Documents\GitHub\hello-world\code\mvn\james-spring-boot-core-dubbo\target\classes\dubbo\dubbo-demo-provider.xml
 public class SpringBootProvider {
 
     private  static  final Logger logger = LoggerFactory.getLogger(SpringBootProvider.class);

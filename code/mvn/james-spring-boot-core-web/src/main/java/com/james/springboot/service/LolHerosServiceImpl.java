@@ -1,10 +1,9 @@
-package net.james.service.impl;
+package com.james.springboot.service;
 
 import com.github.pagehelper.PageHelper;
-import net.james.dao.LolHeros;
-import net.james.dao.LolHerosExample;
-import net.james.dao.LolHerosMapper;
-import net.james.service.LolHerosService;
+import com.james.springboot.dao.LolHerosMapper;
+import com.james.springboot.dao.bean.LolHeros;
+import com.james.springboot.dao.bean.LolHerosExample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +24,6 @@ public class LolHerosServiceImpl implements LolHerosService {
     @Autowired
     LolHerosMapper lolHerosMapper;
 
-    @Transactional
     @Override
     public List<LolHeros>  getHeros(String name_cn, String name_en) {
         LolHerosExample example = new LolHerosExample();

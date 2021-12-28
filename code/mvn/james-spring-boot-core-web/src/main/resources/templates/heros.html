@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"></link>
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous"></link>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <title th:text="${title}">英雄联盟英雄图</title>
+</head>
+<body>
+<div class="container-fluid theme-showcase" role="main">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="">Heros list<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="jumbotron">
+        <h1>hello</h1>
+        <p>world</p>
+        <!--<h1>英雄联盟</h1>-->
+        <!--<p>在符文之地，魔法就是一切。	</p>-->
+    </div>
+    <div class="row">
+        <!--<select class="form-control">-->
+            <!--<option>1</option>-->
+            <!--<option>2</option>-->
+            <!--<option>3</option>-->
+            <!--<option>4</option>-->
+            <!--<option>5</option>-->
+        <!--</select>-->
+        <!--<div class="col-md-4" th:each="hero : ${herosList}">-->
+        <!--<div class="row">-->
+        <!--<div class="col-md-4">-->
+        <!--<img src="/resources/image/champions/Zyra_Square_0.png" class="img-rounded"-->
+        <!--th:attr="src=@{/lolheros/images/}+${hero.headpicUrl},title=${hero.nickname},alt=${hero.nickname}" />-->
+        <!--</div>-->
+        <!--<div class="col-md-8">-->
+        <!--<p th:text="${hero.nickname}" />-->
+        <!--<p th:text="${hero.nameCn}" />-->
+        <!--&lt;!&ndash;<p th:text="${hero.story}" />&ndash;&gt;-->
+        <!--<a th:attr="href=@{/heros/}+${hero.nameEn}"><p th:text="${hero.nameEn}" /></a>-->
+        <!--<p>-->
+        <!--<span class="label label-info"  th:text="${hero.type}"></span>-->
+        <!--&lt;!&ndash;				  				<span class="label label-info">辅助</span> &ndash;&gt;-->
+        <!--</p>-->
+        <!--<audio style="max-width: 90%" src="/resources/music/Zyra.mp3" controls="controls" preload="none"-->
+        <!--th:attr="src=@{/lolheros/sounds/}+${hero.soundsUrl}" >Your browser does not support the audio tag.</audio>-->
+        <!--&lt;!&ndash; 					  		<audio style="max-width: 90%" src="/resources/music/Zyra.mp3"  controls="controls" preload="none">Your browser does not support the audio tag.</audio> &ndash;&gt;-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+    </div>
+    <h1 th:text="${title}">英雄联盟英雄图</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Heros</div>
+                <!-- Table -->
+                <table  class="table">
+                    <tr th:each="hero : ${heros}">
+                        <!--<td>-->
+                        <!--<a th:href="@{/owners/__${owner.id}__}" th:text="${owner.id + ' ' + owner.name}"/></a>-->
+                        <!--</td>-->
+                        <td th:text="${hero.id}">id</td>
+                        <td th:text="${hero.nameCn}">name_cn</td>
+                        <td th:text="${hero.nameEn}">name_en</td>
+                        <td th:text="${hero.nickname}">nickname</td>
+                        <th th:text="${hero.type}" />
+                        <th th:text="${hero.story}" />
+                        <th th:text="${hero.headpicUrl}" />
+                        <!--<td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "/></td>-->
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div>
+                <fieldset >
+                    <legend>league of legend</legend>
+                    <form  th:action="@{/hero/lolheros/new}" th:object="${lolHero}"   method="post">
+                        <!--enctype="multipart/form-data">-->
+                        <table>
+                            <tr>
+                                <td>Hero's Nick Name:</td>
+                                <td><input type="text" name="nickname" th:field="*{nickname}" /></td>
+                                <td th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}">Nick Name Error</td>
+                            </tr>
+                            <tr>
+                                <td>Hero's CN Name:</td>
+                                <td><input type="text" name="nameCn" th:field="*{nameCn}" /></td>
+                                <td th:if="${#fields.hasErrors('nameCn')}" th:errors="*{nameCn}">CN Name Error</td>
+                            </tr>
+                            <tr>
+                                <td>Hero's EN Name:</td>
+                                <td><input type="text" name="nameEn" th:field="*{nameEn}" /></td>
+                                <td th:if="${#fields.hasErrors('nameEn')}" th:errors="*{nameEn}">EN Name Error</td>
+                            </tr>
+                            <tr>
+                                <td>Hero's Type:</td>
+                                <td><select name="type  " th:field="*{type}">
+                                    <option value="Marksman">射手</option>
+                                    <option value="Tank">坦克</option>
+                                    <option value="Assassin">刺客</option>
+                                    <option value="Mage">法师</option>
+                                    <option value="Support">辅助</option>
+                                    <option value="Fighter">战士</option>
+                                </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>英雄头像</td>
+                                <td><input name="heroheadpic" type="file" /></td>
+                            </tr>
+                            <tr>
+                                <td>英雄声音</td>
+                                <td><input name="herosound" type="file" /></td>
+                            </tr>
+                            <tr>
+                                <td>Hero's Story</td>
+                                <td>
+                                <textarea name="story" cols="34" th:field="*{story}">
+                                </textarea>
+                                </td>
+                                <td th:if="${#fields.hasErrors('story')}" th:errors="*{story}">Story Error</td>
+                            </tr>
+                            <tr>
+                                <td><button type="submit">Submit</button></td>
+                                <td><button type="reset">Reset</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<div>-->
+    <!--<form>-->
+        <!--<select>-->
+            <!--<option>a</option>-->
+            <!--<option>a</option>-->
+            <!--<option>a</option>-->
+            <!--<option>a</option>-->
+        <!--</select>-->
+        <!--<button>ok?</button>-->
+        <!--<input >ok</input>-->
+        <!--<a th:href="@{http://www.thymeleaf.org}">Thymeleaf</a>-->
+
+    <!--</form>-->
+<!--</div>-->
+</body>
+</html>
