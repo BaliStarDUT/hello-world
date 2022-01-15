@@ -19,6 +19,23 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>2.13.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>2.13.1</version>
+            </dependency>
+        <!--//结合slf4j-->
+        <!--If existing components use SLF4J and you want to have this logging routed to Log4j 2, then add the following but do not remove any SLF4J dependencies.-->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>2.13.1</version>
+            </dependency>
     </dependencies>
     <parent>
         <groupId>net.james</groupId>
