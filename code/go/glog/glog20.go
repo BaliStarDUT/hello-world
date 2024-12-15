@@ -9,7 +9,7 @@ import (
 
 // ./glog2   -v 2 -log_dir ./log -stderrthreshold INFO
 // go run scheduler.go -log_dir ./log -stderrthreshold INFO -alsologtostderr -filethreshold info
-func main() {
+func main1() {
 	for {
 		flag.Parse() // 1
 
@@ -21,6 +21,6 @@ func main() {
 		glog.V(2).Infoln("level 2")
 		// glog.Fatalln("This is a Fatal log")
 		glog.Flush() // 4
-		time.Sleep(time.Minute * 5)
+		time.Sleep(time.Second * 5)
 	}
 }

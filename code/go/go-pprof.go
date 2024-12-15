@@ -1,0 +1,14 @@
+package main
+
+import (
+	"log"
+	"net/http"
+	"time"
+)
+
+func main() {
+	go func() {
+		log.Println(http.ListenAndServe("localhost:6060", nil))
+	}()
+	time.Sleep(10)
+}

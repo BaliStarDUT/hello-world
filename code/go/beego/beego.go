@@ -6,10 +6,11 @@ import (
 
 	"github.com/golang/glog"
 
+	"exmaple.com/mod/v2/controllers"
 	"github.com/astaxie/beego"
 )
 
-//MainController is a
+// MainController is a
 type MainController struct {
 	beego.Controller
 }
@@ -46,7 +47,7 @@ func main() {
 	beego.Router("/metrix/hostname", &MainController{}, "*:HostName")
 	beego.Router("/metrix/mem", &MainController{}, "*:MemSize")
 
-	beego.Router("/metrix/version", &MetrixController{}, "*:Get")
+	beego.Router("/metrix/version", &controllers.MetrixController{}, "*:Get")
 
 	beego.Run("localhost:8000")
 }

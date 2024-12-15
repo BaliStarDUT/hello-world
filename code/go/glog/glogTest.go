@@ -1,14 +1,15 @@
 package main
 
 import (
-	log "ac-common-go/glog"
 	"flag"
 	"os"
 	"runtime"
 	"time"
+
+	log "github.com/golang/glog"
 )
 
-func main() {
+func main2() {
 	version := flag.Bool("version", false, "current service build version")
 	flag.Parse()
 	log.Infof("Version: %s", *version)
