@@ -13,12 +13,17 @@ SPIDER_MODULES = ["scrapy_crawler.spiders"]
 NEWSPIDER_MODULE = "scrapy_crawler.spiders"
 
 LOG_ENABLED=True
+# 开启日志到文件
 # LOG_FILE="crowler.log"
 LOG_FILE_APPEND=True
-LOG_FORMAT='%(asctime)s %(levelname)s [%(name)s] : %(message)s'
-LOG_LEVEL="INFO"
+#日志输出的格式 # -8表示占位符，让输出左对齐，输出长度都为8位
+LOG_FORMAT="%(asctime)s - %(name)s - %(levelname)-9s - %(filename)-8s : %(lineno)s line - %(message)s"
+# '%(asctime)s %(levelname)s [%(name)s] : %(message)s'
+# LOG_LEVEL="INFO"
 LOGSTATS_INTERVAL=10
-
+# 解决资源重定向
+MEDIA_ALLOW_REDIRECTS =True
+HTTPERROR_ALLOWED_CODES = [301]
 
 # status
 MEMUSAGE_ENABLED=True
@@ -35,7 +40,7 @@ STATS_DUMP=True
 #USER_AGENT = "scrapy_crawler (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 32

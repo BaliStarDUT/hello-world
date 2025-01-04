@@ -10,23 +10,26 @@ class Image_Spider(scrapy.Spider):
 
     def start_requests(self):
             urls = [
-                "https://www.cyjdm.com/79294.html",
+                "https://www.cyjdm.com/58524.html",
             ]
             for url in urls:
                 yield scrapy.Request(url=url, callback=self.parse)
 
 
     def parse(self, response):
-        for result in response.css('img.aligncenter'):
+        logging.info(response)
+        logging.info(response.xpath('//*[@id="content"]/div/p[3]/span/img'))
+        # for result in response.xpath('//*[@id="content"]/div/p[3]/span/img'):
+        for result in response.css("#content > div > p:nth-child(3) > span > img"):
             logging.info(result.attrib)
             item = ScrapyCrawlerItem()
             # item['host']=self.name
             # item['alt']=result.attrib['alt']
             item['image_urls']= [result.attrib['src']]
-            logging.info(item)
+            logging.info("==%s",item)
             yield item
 
     @classmethod
     def update_settings(cls, settings):
         super().update_settings(settings)
-        settings.set("SOME_SETTING", "some value", priority="spider")
+        settings.set("HTTPERROR_ALLOWED_CODES", "301", priority="spider")
