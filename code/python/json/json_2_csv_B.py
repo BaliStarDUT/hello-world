@@ -5,9 +5,11 @@ import json
 import logging
 import csv
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO,format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# 
 def loadJson():
-    f = open("/Users/bytedance/Desktop/output.txt", encoding='utf-8')
+    f = open("./vm.json", encoding='utf-8')
 
 # 打开CSV文件写入器
     with open('output.csv', 'w', newline='') as csvfile:

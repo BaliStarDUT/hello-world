@@ -7,7 +7,8 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "scrapy_crawler"
+# BOT_NAME = "scrapy_crawler"
+BOT_NAME = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 
 SPIDER_MODULES = ["scrapy_crawler.spiders"]
 NEWSPIDER_MODULE = "scrapy_crawler.spiders"
@@ -65,7 +66,7 @@ DOWNLOAD_WARNSIZE=33554432
 # Override the default request headers:
 #DEFAULT_REQUEST_HEADERS = {
 #    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-#    "Accept-Language": "en",
+#    "Accept-Language": "en",   
 #}
 DEPTH_LIMIT=2
 DNS_TIMEOUT=3

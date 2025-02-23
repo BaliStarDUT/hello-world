@@ -10,7 +10,7 @@ class Image_Spider(scrapy.Spider):
 
     def start_requests(self):
             urls = [
-                "https://www.cyjdm.com/58524.html",
+                "https://dimtown.com/125615.html",
             ]
             for url in urls:
                 yield scrapy.Request(url=url, callback=self.parse)
@@ -18,9 +18,11 @@ class Image_Spider(scrapy.Spider):
 
     def parse(self, response):
         logging.info(response)
-        logging.info(response.xpath('//*[@id="content"]/div/p[3]/span/img'))
+        images=response.xpath('//*[@id="content"]/div//img')
+        logging.info(images)
+        # images = a.css('img')
         # for result in response.xpath('//*[@id="content"]/div/p[3]/span/img'):
-        for result in response.css("#content > div > p:nth-child(3) > span > img"):
+        for result in images:
             logging.info(result.attrib)
             item = ScrapyCrawlerItem()
             # item['host']=self.name

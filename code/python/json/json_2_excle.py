@@ -10,7 +10,7 @@ import csv
 logging.basicConfig(level=logging.INFO)
 
 def open_file():
-    with open('/Users/bytedance/Desktop/output.txt', 'r') as f:
+    with open('./output.txt', 'r') as f:
         for line in f:
             logging.info(line[0:100])
             json_s = line.replace("'",'"')
@@ -42,7 +42,7 @@ def save_to_excle(json_s2):
 
 
 def save_to_csv():
-    with open('/Users/didi/Documents/response.json', 'r') as f:
+    with open('./response.json', 'r') as f:
         for line in f:
             logging.info(line[0:100])
             json_s = line.replace("'",'"')
@@ -51,7 +51,7 @@ def save_to_csv():
 
             logging.info(json_s2[0].keys())
 
-    with open('/Users/didi/Documents/Data_All.csv', 'w', newline='', encoding='utf-8') as csvfile:
+    with open('./Data_All.csv', 'w', newline='', encoding='utf-8') as csvfile:
         csvwriter = csv.writer(csvfile)
 
         header = ["xkzh", "qymc", "gmpZsh", "cym", "shren", "shrq"]
