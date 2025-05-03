@@ -1,6 +1,7 @@
 module exmaple.com/mod/v2
 
 go 1.22.1
+toolchain go1.24.1
 
 require (
 	github.com/astaxie/beego v1.12.3
@@ -18,10 +19,10 @@ require (
 	github.com/prometheus/common v0.10.0 // indirect
 	github.com/prometheus/procfs v0.1.3 // indirect
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
-	golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550 // indirect
-	golang.org/x/net v0.0.0-20190620200207-3b0461eec859 // indirect
-	golang.org/x/sys v0.0.0-20200615200032-f1bc736245b1 // indirect
-	golang.org/x/text v0.3.0 // indirect
+	golang.org/x/crypto v0.35.0 // indirect
+	golang.org/x/net v0.21.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
+	golang.org/x/text v0.22.0 // indirect
 	google.golang.org/protobuf v1.23.0 // indirect
 	gopkg.in/yaml.v2 v2.2.8 // indirect
 )
