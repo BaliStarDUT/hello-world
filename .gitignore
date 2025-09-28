@@ -54,3 +54,7 @@ code/voice/public
 code/voice/public.zip
 code/java.io/serialize.txt
 code/Elasticsearch
+history
+*.xlsx
+data/C-故障告警/
+code/python/algorithm/面试算法

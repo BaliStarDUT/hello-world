@@ -7,7 +7,7 @@ import (
 	"math/big"
 )
 
-func main() {
+func big2() {
 	// Here are some calculations with bigInts:
 	im := big.NewInt(math.MaxInt64)
 	in := im
@@ -39,6 +39,6 @@ func main() {
 	// arr := []int{}
 	// arr := []int{nil}
 
-	fmt.Printf("%v",nil)
+	fmt.Printf("%v", nil)
 
 }

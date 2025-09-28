@@ -69,4 +69,9 @@ func main() {
 	fmt.Printf("address:%x\n", &Book1)
 	fmt.Printf("address:%x\n", &Book2)
 	fmt.Println("hello world!")
+	fmt.Printf("Book1.book_id:%d\n", Book1.book_id)
+	// atomic.AddUint32(uint16(111), 1)
+	// atomic.AddUint32(uint32(Book1.book_id), 1)
+	// atomic.AddInt64(1, 1)
+	var a, book_id uint16 = 1, 2
 }
