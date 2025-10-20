@@ -14,7 +14,7 @@ import (
 
 func assignTasks(tasks [][]int) []int {
 	res := make([]int, 0)
-
+	curTime:=0
 	waitHeap := make(WaitHeap, 0)
 	heap.Init(&waitHeap)
 
@@ -23,7 +23,7 @@ func assignTasks(tasks [][]int) []int {
 			Order:   tasks[i][0],
 			EndTime: tasks[i][1],
 		})
-		curTime := 0
+		curTime = 0
 		for waitHeap.Len() > 0 && waitHeap[0].EndTime <= curTime {
 			node := heap.Pop(&waitHeap).(CPU)
 			heap.Push(&waitHeap, CPU{
