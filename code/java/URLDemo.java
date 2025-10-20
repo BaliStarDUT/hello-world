@@ -12,5 +12,16 @@ class URLDemo{
 		}catch(MalformedURLException exc){
 			System.out.println("Invalid URL: "+exc);
 		}
+		URLDemo.astring();
 	}
+	 
+    public static void astring() {
+		String str1="abc";
+		String str2= new String("abc");
+		String str3= str2.intern();
+		System.out.println(str1==str2);
+		System.out.println(str2==str3);
+		System.out.println(str1==str3);
+
+    }
 }

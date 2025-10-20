@@ -57,4 +57,4 @@ if __name__ == "__main__":
     grid = [[1,1,1,1,0],[1,1,0,1,0],[1,1,0,0,0],[0,0,0,0,0]]
     grid2= [[1,1,0,0,0],[1,1,0,0,0],[0,0,1,0,0],[0,0,0,1,1]]
     # print(Solution().numIslands(grid2))
-    print(Solution().numIslands_dfs(grid))
+    print(Solution().numIslands_dfs(grid2))

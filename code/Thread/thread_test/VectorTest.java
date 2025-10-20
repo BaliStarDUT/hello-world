@@ -25,7 +25,9 @@ public class VectorTest{
       });
       removeThread.start();
       printThread.start();
-      while(Thread.activeCount()>20);
+      while(Thread.activeCount()>20){
+        System.out.println("Thread Count:"+Thread.activeCount());
+      };
     }
   }
 }
