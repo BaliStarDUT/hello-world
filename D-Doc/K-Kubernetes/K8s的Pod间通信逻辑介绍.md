@@ -76,3 +76,102 @@ Pod 直接使用物理网络的 IP 地址（与节点在同一网段），数据
 3. **服务发现层**：Service 提供固定访问入口，Kube-Proxy 实现负载均衡，解决 Pod IP 动态变化和多副本问题。
 
 整个过程无需人工配置 IP 或路由，完全由 K8s 网络组件自动化管理，确保 Pod 间通信的可靠性和灵活性。
+
+# 5、请详述kube-proxy原理?
+- https://blog.51cto.com/u_14224/9285358
+![alt text](image.png)
+service其实只是一个概念，真正起作用的是kube-proxy服务进程，每个node节点上都运行一个kube-proxy服务进程，创建service的时候会通过apiserver向etcd中写入service的信息，kube-proxy进行会监听service的变动，然后将最新的service信息转换成对应的访问规则。
+![alt text](image-1.png)
+
+## kube-proxy现在支持的三种模式：
+
+### 1、userspace模式 
+
+userspace模式下，kube-proxy会为每个service创建一个监听端口，发向cluster IP的请求被iptables规则重定向到kube-proxy监听的端口上，然后kube-proxy根据LB算法选择一个可以提供服务的pod并建立连接，将请求转发到这个pod上。
+
+- 这种模式，进行请求转发处理时，会增加内核和用户之间的数据拷贝，效率低，但是稳定
+-----------------------------------
+K8S做虚拟化 面试题 k8s常见面试题
+https://blog.51cto.com/u_14224/9285358
+
+![alt text](image-2.png)
+### 2、iptables模式
+
+iptables模式下，kube-proxy为service后端的每个pod创建对应的iptables规则，将直接发向cluster IP的请求重定向到一个pod 的ip上。
+
+该模式下kube-proxy只负责创建iptables规则，优点是效率高，但是不能提供灵活的负载均衡策略，而后端pod不可用时，也无法重试。
+![alt text](image-3.png)
+
+### 3、ipvs模式
+
+ ipvs模式和iptables类似，kube-proxy监控Pod的变化并创建相应的ipvs规则。ipvs相对iptables转发效率更高。除此以外，ipvs支持更多的LB算法
+
+![alt text](image-4.png)
+答：集群中每个Node上都会运行一个kube-proxy服务进程，他是Service的透明代理兼均衡负载器，其核心功能是将某个Service的访问转发到后端的多个Pod上。kube-proxy通过监听集群状态变更，并对本机iptables做修改，从而实现网络路由。 而其中的负载均衡，也是通过iptables的特性实现的。从V1.8版本开始，用IPVS（IP Virtual Server）模式，用于路由规则的配置，主要优势是：1）为大型集群提供了更好的扩展性和性能。采用哈希表的数据结构，更高效；2）支持更复杂的负载均衡算法；3）支持服务器健康检查和连接重试；4）可以动态修改ipset的集合；
+
+
+-----------------------------------
+K8S做虚拟化 面试题 k8s常见面试题
+https://blog.51cto.com/u_14224/9285358
+
+
+# k8s发布(暴露)服务，servcie的类型有那些
+
+- ClusterIP类型： kubernetes系统自动分配的虚拟ip（或者自己配置clusterIP），只能在集群内部访问
+headless类型：无头服务，某些场景开发人员不想使用service提供的负载均衡功能，而是希望自己控制。（见后面）这类service配置时clusterIP要设置为None，如果要访问service，只能通过service的域名访问。
+NodePort类型：这类service可以将service暴露给集群外部使用，原理就是将service的端口映射到Node的一个端口上，最常用
+LoadBalancer类型：LoadBalancer又会在集群外部做一个负载均衡的设备，相当于把NodePort类型的service在向外映射。这种用法仅用于在公有云服务提供商的云平台上设置Service的场景；
+ExternalName类型：用于引入集群外部的服务，通过externalName属性指定外部服务的地址，然后在集群内访问这个service的时候，就可以访问到外部服务了。
+-----------------------------------
+K8S做虚拟化 面试题 k8s常见面试题
+https://blog.51cto.com/u_14224/9285358
+![alt text](image-5.png)
+
+- 答：kubernetes原生的，一个Service的ServiceType决定了其发布服务的方式。1） ClusterIP：这是k8s默认的ServiceType。通过集群内的ClusterIP在内部发布服务。2）NodePort：这种方式是常用的，用来对集群外暴露Service，你可以通过访问集群内的每个NodeIP:NodePort的方式，访问到对应Service后端的Endpoint。3）LoadBalancer: 这也是用来对集群外暴露服务的，不同的是这需要Cloud Provider的支持，比如AWS等。4）ExternalName：这个也是在集群内发布服务用的，需要借助KubeDNS(version >= 1.7)的支持，就是用KubeDNS将该service和ExternalName做一个Map，KubeDNS返回一个CNAME记录；
+-----------------------------------
+K8S做虚拟化 面试题 k8s常见面试题
+https://blog.51cto.com/u_14224/9285358
+
+# 43、简述Kubernetes ingress?
+前面了解了：Service对集群之外暴露服务的主要方式有两种：NotePort和LoadBalancer，但是这两种方式，都有一定的缺点：
+
+NodePort方式的缺点是占用了很多的Node端口
+
+LB缺点是每个service需要一个LB，资源浪费，并且需要k8s之外的设备支持。
+
+为了解决上述问题，k8s提供了ingress资源对象，ingress只需要一个NodePort或者一个LB就可以满足暴露多个service的需求 。如下图：
+
+![alt text](image-6.png)
+
+实际上，ingress相当于一个7层负载均衡器，是kubernetes对反向代理的一个抽象，工作原理类似于Nginx，可以简单的理解成：
+
+ingress建立了诸多的映射规则，ingress controller 通过监听这些配置规则bin转化为Nginx的反向代理配置，然后对外提供服务
+。
+
+- ingress：k8s中一种资源对象，作用是定义请求如何转发到service的规则
+ingress controller： 具体实现反向代理和负载均衡的程序。负责对ingress定义的规则进行解析，然后根据配置规则来实现请求转发，实现方式很多如Nginx，HAProxy等
+-----------------------------------
+K8S做虚拟化 面试题 k8s常见面试题
+https://blog.51cto.com/u_14224/9285358
+
+- ingress的工作原理（以Nginx实现方式为例）
+
+- 用户编写ingress规则，说明那个域名对应k8s集群中的哪个service
+ingress controller动态感知ingress服务规则的变化，然后生成对应的Nginx反向代理配置
+ingress controller将生成的Nginx配置写入到一个运行的Nginx服务中（这个是动态更新的 ）
+然后就是Nginx来工作了，Nginx将按照配置中的规则将请求转发给pod（实现HTTP层的业务路由机制），而不再经过kube-proxy
+-----------------------------------
+K8S做虚拟化 面试题 k8s常见面试题
+https://blog.51cto.com/u_14224/9285358
+![alt text](image-7.png)
+
+- K8s的Ingress资源对象，用于将不同URL的访问请求转发到后端不同的Service，以实现HTTP层的业务路由机制。K8s使用了Ingress策略和Ingress Controller，两者结合并实现了一个完整的Ingress负载均衡器。使用Ingress进行负载分发时，Ingress Controller基于Ingress规则将客户端请求直接转发到Service对应的后端Endpoint（Pod）上，从而跳过kube-proxy的转发功能，kube-proxy不再起作用，全过程为：ingress controller + ingress 规则 ----> services；
+
+### 简述Kubernetes Scheduler使用哪两种算法将Pod绑定到worker节点?
+
+- 1）预选（Predicates）：输入是所有节点，输出是满足预选条件的节点。kube-scheduler根据预选策略过滤掉不满足策略的Nodes。如果某节点的资源不足或者不满足预选策略的条件则无法通过预选；
+
+- 2）优选（Priorities）：输入是预选阶段筛选出的节点，优选会根据优先策略为通过预选的Nodes进行打分排名，选择得分最高的Node。例如，资源越富裕、负载越小的Node可能具有越高的排名；
+-----------------------------------
+K8S做虚拟化 面试题 k8s常见面试题
+https://blog.51cto.com/u_14224/9285358

@@ -10,6 +10,7 @@
 .classpath
 .project
 
+**.png
 **.sum
 
 *.class
@@ -57,4 +58,4 @@ code/Elasticsearch
 history
 *.xlsx
 data/C-故障告警/
-code/python/algorithm/面试算法
+A-Algorithms/algorithm/面试算法
